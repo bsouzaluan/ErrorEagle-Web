@@ -1,40 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ErrorEagle | Página Inicial</title>
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="./assets/icon/" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"> -->
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container">
-            <a id="logoLink" href="index.html"><img id="logo" src="assets/icon/ErrorEagle.png" alt="">ErrorEagle</a>
-            <ul id="navbarList">
-                <button>Cadastrar</button>
-                <button>Login</button>
-                <button>Sair</button>
-            </ul>
-        </div>
+      <div class="container">
+        <a id="logoLink" href="index.html"
+          ><img
+            id="logo"
+            src="assets/icon/ErrorEagle.png"
+            alt=""
+          />ErrorEagle</a
+        >
+        <ul id="navbarList">
+          <button onclick="abrirCadastro()">Cadastrar</button>
+          <button onclick="abrirLogin()">Login</button>
+          <button>Sair</button>
+        </ul>
+      </div>
     </header>
+    <div class="login">
+      <div class="formLogin">
+        <div class="container">
+          <h1>Login</h1>
+          <input type="email" id="inpEmail" placeholder="Email" />
+
+          <input type="password" id="inpSenha" placeholder="password" />
+          <button id="cadastroN">Ainda Não Possui Cadastro?</button>
+          <button id="loginBtn" onclick="entrar()">Login</button>
+
+          <div id="div_aguardar" class="loading-div" style="display: none">
+            <img src="assets/circle-loading.gif" id="loading-gif" />
+          </div>
+          <div id="div_erros_login"></div>
+        </div>
+        <button onclick="closeLogin()" id="btnCloseLogin">
+          <img src="assets/icon/close.png" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="cadastro">
+      <div class="formCadastro">
+        <button onclick="closeCadastro()" id="btnCloseCadastro">
+          <img src="assets/icon/close.png" alt="" />
+        </button>
+        <div class="container">
+          <h1>Cadastrar</h1>
+          <input type="email" id="inpEmail" placeholder="Email" />
+          <input type="password" id="inpSenha" placeholder="Digite a senha" />
+          <input
+            type="password"
+            id="inpSenhaConfirmacao"
+            placeholder="confirme a sua senha"
+          />
+          <button id="cadastroN">Já possui cadastro?</button>
+          <button id="loginBtn" onclick="entrar()">Cadastrar</button>
+
+          <div id="div_aguardar" class="loading-div" style="display: none">
+            <img src="assets/circle-loading.gif" id="loading-gif" />
+          </div>
+          <div id="div_erros_login"></div>
+        </div>
+        <button onclick="closeCadastro()" id="btnCloseCadastro">
+          <img src="assets/icon/close.png" alt="" />
+        </button>
+      </div>
+    </div>
     <main></main>
     <footer>
-        <div class="container">
-
-        </div>
+      <div class="container">ErrorEagle</div>
     </footer>
-</body>
-
+  </body>
+  <script src="js/funcoesIndex.js"></script>
 </html>
