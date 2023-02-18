@@ -7,22 +7,48 @@
 }
 
 header{
-  background-color: black;
+  background-color: white;
   width: 100vw;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: .1px solid black;
 }
+
  header .container{
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+}
+#logo{
+  width: 50px;
+  margin: 0px 20px;
+}
+#logoLink{
+  display: flex;
+  justify-content: center;
+  align-items: center; color: black;
+  text-decoration: none; 
+  margin: 10px 20px;
+  font-size: 25px;
+  letter-spacing: 1px ;
 }
 #navbarList{
   display: flex;
   flex-direction: row;
   list-style: none;   
-  
+
+
+}
+
+#navbarList button{
+ cursor: pointer;
+ border: none;
+ background-color: white;
+ user-select:contain;
+ margin: 20px;
+ font-size: 17px;
 }
