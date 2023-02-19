@@ -61,15 +61,20 @@
         </button>
         <div class="container">
           <h1>Cadastrar</h1>
-          <input type="email" id="inpEmail" placeholder="Email" />
-          <input type="password" id="inpSenha" placeholder="Digite a senha" />
+          <input type="text" id="nomeCadastro" placeholder="Nome" />
+          <input type="email" id="inpEmailCadastro" placeholder="Email" />
+          <input
+            type="password"
+            id="inpSenhaCadastro"
+            placeholder="Digite a senha"
+          />
           <input
             type="password"
             id="inpSenhaConfirmacao"
             placeholder="confirme a sua senha"
           />
           <button id="cadastroN">Já possui cadastro?</button>
-          <button id="loginBtn" onclick="entrar()">Cadastrar</button>
+          <button id="loginBtn" onclick="cadastrar()">Cadastrar</button>
 
           <div id="div_aguardar" class="loading-div" style="display: none">
             <img src="assets/circle-loading.gif" id="loading-gif" />
