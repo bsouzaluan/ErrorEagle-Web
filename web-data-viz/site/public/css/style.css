@@ -18,13 +18,13 @@ body::-webkit-scrollbar {
 
 
 header {
-  background-color: rgb(0, 10, 41);
+  background-color: #121212;
   width: 100vw;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: .1px solid black;
+
 }
 
 header .container {
@@ -36,7 +36,7 @@ header .container {
 }
 
 #logo {
-  width: 50px;
+  width: 200px;
   margin: 0px 20px;
 }
 
@@ -59,7 +59,8 @@ header .container {
 
 }
 
-#navbarList button {
+#navbarList button,
+#navbarList a {
   cursor: pointer;
   border: none;
   background-color: rgba(1, 14, 56, 0);
@@ -68,6 +69,14 @@ header .container {
   margin: 20px;
   font-size: 17px;
   font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navbarList button:hover,
+#navbarList a:hover {
+  transition: .3s;
+  color: #880a0a;
 }
 
 /*Header*/
@@ -76,7 +85,7 @@ header .container {
 /*Footer*/
 footer {
 
-  background-color: black;
+  background-color: #121212;
   width: 100%;
   color: white;
   display: flex;
@@ -228,8 +237,9 @@ footer {
   margin: 10px 0px 30px 0px;
 }
 
-#inpEmail,
-#inpSenha,
+#nomeCadastro,
+#inpEmailCadastro,
+#inpSenhaCadastro,
 #inpSenhaConfirmacao {
   width: 100%;
   padding: 12px;
