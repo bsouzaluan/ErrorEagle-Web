@@ -151,3 +151,13 @@ function cadastrar() {
 
     return false;
 }
+function btnSairShow() {
+    if (sessionStorage.length == 0) {
+        console.log(sessionStorage.lenght)
+        document.getElementById("sairBtn").style = "display:none;"
+    } else {
+        console.log(sessionStorage.lenght)
+        document.getElementById("sairBtn").style = "display: inline-block;"
+    }
+}
+btnSairShow();
