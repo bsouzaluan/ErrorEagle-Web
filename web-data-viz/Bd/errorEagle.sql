@@ -1,6 +1,8 @@
-CREATE DATABASE erroEagle;
-use erroEagle;
-CREATE TABLE Usuario (
+
+DROP DATABASE erroEagle;
+CREATE DATABASE errorEagle;
+use errorEagle;
+CREATE TABLE usuario (
 idUser INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(45) NOT NULL,
 email VARCHAR(256),
@@ -41,3 +43,4 @@ VALUES
     ('Isabela Lima', 'isabela.lima@example.com', 'outraSenha123'),
     ('Rogério Vieira', 'rogerio.vieira@example.com', 'maisUmaSenha456');
     Select * From Usuario;
+    
