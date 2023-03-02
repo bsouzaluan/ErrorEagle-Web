@@ -81,12 +81,81 @@ header .container {
 
 /*Header*/
 /*Main*/
+main {
+  z-index: +50;
+}
+
+#sec_01 {
+  height: 80vh;
+  background-color: #111111;
+}
+
+#sec_02 {
+  height: 80vh;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%, rgba(24, 24, 24, 1) 100%);
+}
+
+#sec_02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sec_02 .panelInfo {
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+
+}
+
+#sec_02 .panelInfo {
+  background-color: #CB1B29;
+}
+
+#sec_02 :last-child,
+#sec_02 :first-child {
+  background-color: #1E1E1E;
+}
+
+#sec_03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%, rgba(24, 24, 24, 1) 100%);
+}
+
+#sec_03 .container {
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+}
+
+#sec_03 #panelGroup {
+  background-color: #880a0a;
+  width: 60vw;
+  height: 55vh;
+}
+
+#sec_03 .container #panelGroup .panelInfo {
+  width: 50px;
+  height: 20px;
+  color: #9c9898;
+}
+
+
+#infoPanel {
+  background-color: green;
+  width: 45vw;
+}
+
 /*Main*/
 /*Footer*/
 footer {
 
   background-color: #121212;
-  width: 100%;
+
   color: white;
   display: flex;
   justify-content: center;
@@ -94,7 +163,10 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
   font-weight: 600;
+}
 
+footer .container {
+  padding: 20px;
 }
 
 /*Footer*/
@@ -130,6 +202,8 @@ footer {
 .login {
   display: none;
   z-index: +99;
+  position: fixed;
+  background-color: #ffffff09;
 }
 
 
@@ -204,6 +278,8 @@ footer {
 .cadastro {
   display: none;
   z-index: +99;
+  position: fixed;
+  background-color: #ffffff59;
 }
 
 .formCadastro {
