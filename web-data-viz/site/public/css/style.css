@@ -1,22 +1,24 @@
-/*Header*/
+/* Fontes importadas */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Fontes importadas */
+/* Formatação basica do html */
 * {
   margin: 0px;
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {}
-
-body::-webkit-scrollbar {
-  display: none;
+/* Formatação basica do html */
 
 
-}
+/* body::-webkit-scrollbar {}  serve para desabilitar a barra lateral*/
 
 
-
+/*Header*/
 header {
   background-color: #121212;
   width: 100vw;
@@ -24,6 +26,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 1000;
 
 }
 
@@ -86,68 +90,335 @@ main {
 }
 
 #sec_01 {
-  height: 80vh;
-  background-color: #111111;
-}
-
-#sec_02 {
+  display: flex;
+  justify-content: center;
   height: 80vh;
   background: rgb(17, 17, 17);
-  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%, rgba(24, 24, 24, 1) 100%);
+  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 0%);
+}
+
+#sec_01 .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
+
+#sec_01 .container img {
+  width: 800px;
+  margin: 0px 0px 40px 0px;
+}
+
+#sec_01 .container p {
+  width: 700px;
+  color: white;
+  font-size: 21PX;
+  font-weight: normal;
 }
 
 #sec_02 {
+  height: fit-content;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(90deg, rgba(24, 24, 24, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px 0px 20px 0px;
 }
 
 #sec_02 .panelInfo {
-  width: 350px;
-  height: 350px;
+
   margin: 20px;
 
 }
 
 #sec_02 .panelInfo {
+  width: 450px;
+  height: 450px;
   background-color: #CB1B29;
+  border-radius: 6px;
 }
 
 #sec_02 :last-child,
 #sec_02 :first-child {
+  width: 400px;
+  height: 400px;
   background-color: #1E1E1E;
+  border-radius: 6px;
 }
 
 #sec_03 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%, rgba(24, 24, 24, 1) 100%);
+  height: fit-content;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(90deg, rgba(24, 24, 24, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%);
+  padding: 50px 0px 50px 0px;
 }
 
 #sec_03 .container {
   display: flex;
   justify-content: center;
+  align-content: center;
   width: 70vw;
+  height: fit-content;
 }
 
 #sec_03 #panelGroup {
-  background-color: #880a0a;
-  width: 60vw;
-  height: 55vh;
+
+  /* background-color: #880a0a; */
+  width: 70vw;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  flex-wrap: wrap;
 }
 
 #sec_03 .container #panelGroup .panelInfo {
-  width: 50px;
-  height: 20px;
-  color: #9c9898;
+  width: 380px;
+  height: 200px;
+  background-color: #1E1E1E;
+  margin: 20px 0px 20px 20px;
+  border-radius: 8px;
 }
 
 
+
 #infoPanel {
-  background-color: green;
-  width: 45vw;
+
+  width: 30vw;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#infoPanel h1 {
+  color: #EF403F;
+  font-size: 160px;
+  font-weight: bolder;
+}
+
+#infoPanel h2 {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#sec_04 {
+  background-color: #181818;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#middleIMG {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+}
+
+#imgTeam {
+  width: 99.3%;
+}
+
+#infoTeam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bolder;
+  height: 20px;
+
+}
+
+#sec_05 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(17, 17, 17);
+  padding: 80px 0px 80px 0px;
+  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 50%, rgba(24, 24, 24, 1) 50%);
+}
+
+#sec_05 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 70vw;
+
+}
+
+#sec_05 .panelInfo {
+  margin: 40px 0px 40px 0px;
+  height: 500px;
+  width: 400px;
+  margin: 20px;
+  background-color: #1E1E1E;
+  border-radius: 6px;
+}
+
+#sec_06 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#sec_06 .container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#sec_06 h1 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin: 30px;
+}
+
+#sec_06 form {
+  background-color: #1E1E1E;
+  width: 80%;
+  margin: 40px;
+  padding: 30px;
+}
+
+#sec_06 form input,
+#sec_06 form textarea {
+  background-color: #4d4d4d;
+  color: white;
+  border: none;
+}
+
+#sec_06 form input::placeholder,
+#sec_06 form textarea::placeholder {
+  background-color: #4d4d4d;
+  color: white;
+}
+
+#inpsPart1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+#inpsPart1 input {
+  border-radius: 6px;
+  padding: 20px;
+  margin: 10px;
+  width: 40%;
+
+}
+
+#inpsPart2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#inpsPart2 input,
+textarea {
+  border-radius: 6px;
+  padding: 20px;
+  margin: 10px;
+  width: 86%;
+  resize: none;
+}
+
+#btnSubmit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+}
+
+#btnSubmit button {
+  width: 90%;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 20px 30px;
+  margin: 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+#sec_07 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sec_07 .container {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 70px 0px 70px 0px;
+  background-color: #1E1E1E;
+  border-radius: 6px;
+
+
+}
+
+#sec_07 #textInformation {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+#sec_07 #textInformation h1 {
+  font-size: 75px;
+}
+
+#sec_07 button {
+  border-radius: 6px;
+  background-color: #FF4D4D;
+  color: white;
+  padding: 20px;
+  border: none;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+#sec_07 #textInformation h2 {
+  font-size: 30px;
 }
 
 /*Main*/
@@ -187,14 +458,13 @@ footer .container {
   width: 25px;
 }
 
-
 .formLogin {
   z-index: +99;
   background-color: rgba(0, 0, 0, 0.164);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
 
 }
@@ -203,10 +473,8 @@ footer .container {
   display: none;
   z-index: +99;
   position: fixed;
-  background-color: #ffffff09;
+  background-color: #ffffff59;
 }
-
-
 
 .formLogin .container {
   background-color: white;
@@ -216,7 +484,7 @@ footer .container {
   align-items: center;
   border-radius: 6px;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   max-width: 500px;
   margin: 0 auto;
   border-radius: 5px;
@@ -239,7 +507,7 @@ footer .container {
 }
 
 #loginBtn {
-  background-color: #4CAF50;
+  background-color: #EF403F;
   color: #fff;
   padding: 12px 20px;
   border: none;
@@ -271,7 +539,6 @@ footer .container {
 }
 
 #btnCloseCadastro img {
-
   width: 25px;
 }
 
@@ -289,7 +556,7 @@ footer .container {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
 
 }
 
@@ -301,7 +568,7 @@ footer .container {
   align-items: center;
   border-radius: 6px;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   max-width: 500px;
   margin: 0 auto;
   border-radius: 5px;
@@ -326,7 +593,8 @@ footer .container {
 }
 
 #cadastroBtn {
-  background-color: #4CAF50;
+  /* font-family: ; */
+  background-color: #EF403F;
   color: #fff;
   padding: 12px 20px;
   border: none;
