@@ -45,7 +45,7 @@
           <input type="email" id="inpEmail" placeholder="Email" />
 
           <input type="password" id="inpSenha" placeholder="password" />
-          <button id="cadastroN">Ainda Não Possui Cadastro?</button>
+          <button id="cadastroN" onclick="abrirCadastro()">Ainda Não Possui Cadastro?</button>
           <button id="loginBtn" onclick="entrar()">Login</button>
 
           <div id="div_aguardar" class="loading-div" style="display: none">
@@ -58,16 +58,17 @@
     </div>
     <div class="cadastro">
       <div class="formCadastro">
-        <button onclick="closeCadastro()" id="btnCloseCadastro">
-          <img src="assets/icon/close.png" alt="" />
-        </button>
+        
         <div class="container">
+          <button onclick="closeCadastro()" id="btnCloseCadastro">
+            <img src="assets/icon/close.png" alt="" />
+          </button>
           <h1>Cadastrar</h1>
           <input type="text" id="nomeCadastro" placeholder="Nome" />
           <input type="email" id="inpEmailCadastro" placeholder="Email" />
           <input type="password" id="inpSenhaCadastro" placeholder="Digite a senha" />
           <input type="password" id="inpSenhaConfirmacao" placeholder="confirme a sua senha" />
-          <button id="cadastroN">Já possui cadastro?</button>
+          <button id="cadastroN" onclick="abrirLogin()">Já possui cadastro?</button>
           <button id="loginBtn" onclick="cadastrar()">Cadastrar</button>
 
           <div id="div_aguardar" class="loading-div" style="display: none">
@@ -151,7 +152,7 @@
           <h1>Lorem Ipsum</h1>
           <h2>Lorem Ipsum dolor colum na bas</h2>
         </div>
-        <div id="ctcDiv"><button>Cadastre-se</button></div>
+        <div id="ctcDiv"><button onclick="abrirCadastro()">Cadastre-se</button></div>
 
       </div>
     </section>
@@ -164,7 +165,7 @@
       <div class="container">
 
         <ul id="navbarList">
-          <a href="aboutUs.html">sobre nós</a>
+          <a href="aboutUs.html">Sobre nós</a>
           <button onclick="abrirCadastro()">Cadastrar</button>
           <button onclick="abrirLogin()">Login</button>
         </ul>
