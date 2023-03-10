@@ -17,121 +17,21 @@
 
 /* body::-webkit-scrollbar {}  serve para desabilitar a barra lateral*/
 
-/* Responsividade*/
-@media only screen and (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #logo {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  #navbarList {
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  #navbarList button,
-  #navbarList a {
-    margin: 10px 0px;
-  }
 
-  /* Site */
-  #sec_01{
-    display: grid;
-    flex-direction: column;
-  }
-  #sec_01 .container {
-    width: 100%;
-  }
-  #sec_01 .container img {
-    width: 100px;
-  }
-  #sec_01 .container p {
-    width: 90vw;
-    font-size: 18px;
-  }
-  #sec_02{
-    display: grid;
-    flex-direction:column ;
-  }
-  #sec_02 .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #sec_02 .panelInfo,
-  #sec_02 :last-child,
-  #sec_02 :first-child {
-    width: 90%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-  #sec_03{
-    display: grid;
-    flex-direction: column;
-  }
-  #sec_03 .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #sec_03 #panelGroup {
-    width: 90%;
-  }
-  #sec_04{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  #sec_05 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* define a largura das colunas */
-    grid-gap: 10px; /* define o espaçamento entre as colunas */
-  }
-  #sec_05 .container {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-  }
-  #sec_05 .panelInfo {
-    height: 200px;
-    width: 100%;
-    margin: 10px;
-  }
-  #sec_05 .paineis{
-    display: grid;
-    flex-direction: column;
-  }
-  #sec_06 .container {
-    width: 100%;
-  }
-  #sec_07 .container div{
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  #sec_07 .container div > * {
-    width: 50%;
-  }
-  #sec_07 .container button{
-    width: 100%;
-  }
-  #sec_08{
-    height: 90%;
-  }
+body {
+  background-color: rgb(24, 24, 24);
+
 }
-/* Responsividade*/
 
 /*Header*/
 header {
   background-color: #121212;
-  header:100%;
   width: 100vw;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   z-index: 1000;
-
 }
 
 header .container {
@@ -207,8 +107,10 @@ main {
   width: 70vw;
 }
 
-#sec_01 .container img {
-  width: 800px;
+#heroImgText {
+  max-width: 800px;
+  width: 50vw;
+  min-width: 200;
   margin: 0px 0px 40px 0px;
 }
 
@@ -277,7 +179,7 @@ main {
   justify-content: center;
   align-items: center;
   align-self: center;
-  flex-wrap: wrap;
+
 }
 
 #sec_03 .container #panelGroup .panelInfo {
@@ -298,6 +200,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-self: center;
 
 
 }
@@ -341,9 +244,10 @@ main {
   text-align: center;
   width: 50%;
   color: #ffffff;
-  font-size: 50px;
+  font-size: 2rem;
   font-weight: bolder;
-  height: 20px;
+  height: fit-content;
+
 
 }
 
@@ -375,8 +279,10 @@ main {
   border-radius: 6px;
 }
 
-#sec_05 .paineis{
+#sec_05 .paineis {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
@@ -480,10 +386,12 @@ textarea {
   font-family: 'Roboto', sans-serif;
 
 }
-#btnSubmit button:hover{
+
+#btnSubmit button:hover {
   background-color: #880a0a;
   transition-duration: 0.6s;
 }
+
 #sec_07 {
   display: flex;
   justify-content: center;
@@ -492,7 +400,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 #sec_07 .container {
@@ -504,7 +412,7 @@ textarea {
   padding: 70px 0px 70px 0px;
   background-color: #1E1E1E;
   border-radius: 6px;
-
+  flex-wrap: wrap;
 
 }
 
@@ -529,7 +437,7 @@ textarea {
   font-size: 30px;
 }
 
-#sec_07 button:hover{
+#sec_07 button:hover {
   background-color: #880a0a;
   transition-duration: 0.6s;
 }
@@ -546,7 +454,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 #sec_08 .container {
@@ -616,13 +524,13 @@ footer .container {
   align-items: center;
 }
 
-footer .container h2{
+footer .container h2 {
   width: 250px;
   font-size: 20px;
   text-align: center;
 }
 
-footer .container h1{
+footer .container h1 {
   font-size: 20px;
   text-decoration: underline;
 }
@@ -634,8 +542,8 @@ footer .container h1{
   border: none;
   cursor: pointer;
   position: relative;
-  bottom: 36vh;
-  right: 5vw;
+  bottom: 1vh;
+  right: 1vw;
   user-select: none;
 
 }
