@@ -27,7 +27,8 @@ body {
 /*Header*/
 header {
   background-color: #121212;
-
+  position: fixed;
+  width: 100%;
   color: white;
   display: flex;
   justify-content: center;
@@ -232,6 +233,10 @@ main {
   display: flex;
   justify-content: center;
   width: 50vw;
+}
+
+#middleIMGR{
+  display: none;
 }
 
 #imgTeam {
@@ -544,7 +549,8 @@ footer .container h1 {
   border: none;
   cursor: pointer;
   position: relative;
-  bottom: 23vh;
+  z-index: 1000;
+  bottom: 17vh;
   right: -39vw;
   user-select: none;
   width: none;
@@ -631,7 +637,8 @@ footer .container h1 {
   border: none;
   cursor: pointer;
   position: relative;
-  bottom: 15vh;
+  z-index: 1000;
+  bottom: 4vh;
   right: -39vw;
   user-select: none;
   width: none;
@@ -682,6 +689,7 @@ footer .container h1 {
 }
 
 #nomeCadastro,
+#inpCodigoEmpresa,
 #inpEmailCadastro,
 #inpSenhaCadastro,
 #inpSenhaConfirmacao {
