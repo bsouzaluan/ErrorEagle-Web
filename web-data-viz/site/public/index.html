@@ -11,7 +11,9 @@
   <script src="./js/funcoes.js"></script>
 
   <link rel="icon" href="./assets/icon/" />
+
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/styleResponsividade.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -35,7 +37,11 @@
     <div class="login">
       <div class="formLogin">
         <div class="container">
+          <button onclick="closeLogin()" id="btnCloseLogin">
+            <img src="assets/icon/close.png" alt="" />
+          </button>
           <h1>Login</h1>
+
           <input type="email" id="inpEmail" placeholder="Email" />
 
           <input type="password" id="inpSenha" placeholder="password" />
@@ -43,13 +49,11 @@
           <button id="loginBtn" onclick="entrar()">Login</button>
 
           <div id="div_aguardar" class="loading-div" style="display: none">
-            <img src="assets/circle-loading.gif" id="loading-gif" />
+
           </div>
           <div id="div_erros_login"></div>
         </div>
-        <button onclick="closeLogin()" id="btnCloseLogin">
-          <img src="assets/icon/close.png" alt="" />
-        </button>
+
       </div>
     </div>
     <div class="cadastro">
@@ -78,7 +82,7 @@
     </div>
     <section id="sec_01">
       <div class="container">
-        <img src="assets/icon/ErrorEagle.svg" alt="">
+        <img src="assets/icon/ErrorEagle.svg" id="heroImgText" alt="">
         <p>Somos uma empreas especializadas em monitorar problemas recorrentes nos caixas de autoatendimento em
           supermercados. Nós sabemos que esses caixas são uma opção popular para muitos clientes, mas também sabemos que
           eles podem apresentar bugs e falhas que atrapalham a experiência de compra do cliente.</p>
@@ -116,9 +120,9 @@
     <section id="sec_05">
       <div class="container">
         <div class="paineis">
-        <div class="panelInfo"></div>
-        <div class="panelInfo"></div>
-        <div class="panelInfo"></div>
+          <div class="panelInfo"></div>
+          <div class="panelInfo"></div>
+          <div class="panelInfo"></div>
         </div>
       </div>
     </section>
