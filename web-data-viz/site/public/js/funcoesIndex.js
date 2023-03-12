@@ -21,7 +21,103 @@ function closeLogin() {
     loginId.style = "display:none;"
 
 }
+function btnSairShow() {
+    if (sessionStorage.length == 0) {
+        console.log(sessionStorage.lenght)
+        document.getElementById("sairBtn").style = "display:none;"
+    } else {
+        console.log(sessionStorage.lenght)
+        document.getElementById("sairBtn").style = "display: inline-block;"
+    }
+}
+function validarCadastro() {
+    alert(`Por favor, insira os dados corretamente.`)
 
+    nomeVar = nomeCadastro.value;
+    emailVar = inpEmailCadastro.value;
+    senhaVar = inpSenhaCadastro.value;
+    confirmacaoSenhaVar = inpSenhaConfirmacao.value;
+    codigoEmpresaVar = inpCodigoEmpresa.value;
+
+
+    if (nomeVar == "") {
+
+        nomeCadastro.style = " border: 3px solid #ff0000 ;"
+
+    } else {
+        nomeCadastro.style = "border: 1px solid #ccc; "
+
+    }
+
+    if (emailVar == "") {
+
+        inpEmailCadastro.style = " border: 3px solid #ff0000 ;"
+
+    } else {
+        inpEmailCadastro.style = " border: 1px solid #ccc;  "
+    }
+
+    if (senhaVar == "") {
+
+        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
+
+    }
+    else {
+        inpSenhaCadastro.style = "border: 1px solid #ccc;"
+    }
+
+    if (confirmacaoSenhaVar == "") {
+
+        inpSenhaConfirmacao.style = " border: 3px solid #ff0000 ;"
+
+    }
+    else {
+        inpSenhaConfirmacao.style = "  border: 1px solid #ccc; "
+    }
+
+    if (codigoEmpresaVar == "") {
+
+        inpCodigoEmpresa.style = " border: 3px solid #ff0000 ;"
+
+    } else {
+        inpCodigoEmpresa.style = " border: 1px solid #ccc; "
+    }
+    console.log(senhaVar + " " + confirmacaoSenhaVar)
+    if (senhaVar != confirmacaoSenhaVar) {
+
+        alert(`As senhas não coincidem!`)
+        inpSenhaConfirmacao.style = " border: 3px solid #ff0000 ;"
+        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
+
+    } else {
+        console.log("Senha correta")
+    }
+}
+function validarLogin() {
+
+    alert(`Login inválido.`)
+    emailVar = inpEmail.value;
+    senhaVar = inpSenha.value;
+
+    if (emailVar == "") {
+
+        inpEmail.style = " border: 3px solid #ff0000 ;"
+    } else {
+        inpEmail.style = "border: 1px solid #ccc; "
+    }
+
+    if (senhaVar == "") {
+
+        inpSenha.style = " border: 3px solid #ff0000 ;"
+    }
+
+    else {
+        inpSenha.style = " border: 1px solid #ccc; "
+    }
+
+
+
+}
 function entrar() {
     // aguardar();
 
@@ -88,8 +184,7 @@ function entrar() {
     return false;
 }
 function cadastrar() {
-    aguardar();
-
+    //aguardar();
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nomeCadastro.value;
@@ -105,16 +200,11 @@ function cadastrar() {
         confirmacaoSenhaVar == "" ||
         codigoEmpresaVar == ""
     ) {
-        validarCadastro();
+        console.log("Campos vazios");
 
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-        //     "(Mensagem de erro para todos os campos em branco)";
-
-        //finalizarAguardar();
         return false;
     } else {
-        // setInterval(sumirMensagem, 5000);
+        validarCadastro();
     }
 
     // Enviando o valor da nova input
@@ -157,97 +247,6 @@ function cadastrar() {
 
     return false;
 }
-function btnSairShow() {
-    if (sessionStorage.length == 0) {
-        console.log(sessionStorage.lenght)
-        document.getElementById("sairBtn").style = "display:none;"
-    } else {
-        console.log(sessionStorage.lenght)
-        document.getElementById("sairBtn").style = "display: inline-block;"
-    }
-}
+
 btnSairShow();
 
-function validarCadastro() {
-    alert(`Por favor, insira os dados corretamente.`)
-
-    nomeVar = nomeCadastro.value;
-    emailVar = inpEmailCadastro.value;
-    senhaVar = inpSenhaCadastro.value;
-    confirmacaoSenhaVar = inpSenhaConfirmacao.value;
-    codigoEmpresaVar = inpCodigoEmpresa.value;
-
-
-    if (nomeVar == "") {
-
-        nomeCadastro.style = " border: 3px solid #ff0000 ;"
-
-    } else {
-        nomeCadastro.style = "border: 1px solid #ccc; "
-
-    }
-    if (emailVar == "") {
-
-        inpEmailCadastro.style = " border: 3px solid #ff0000 ;"
-
-    } else {
-        inpEmailCadastro.style = " border: 1px solid #ccc;  "
-    }
-    if (senhaVar == "") {
-
-        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
-
-    }
-    else {
-        inpSenhaCadastro.style = "border: 1px solid #ccc;"
-    }
-    if (confirmacaoSenhaVar == "") {
-
-        inpSenhaConfirmacao.style = " border: 3px solid #ff0000 ;"
-
-    }
-    else {
-        inpSenhaConfirmacao.style = "  border: 1px solid #ccc; "
-    }
-    if (codigoEmpresaVar == "") {
-
-        inpCodigoEmpresa.style = " border: 3px solid #ff0000 ;"
-
-    } else {
-        inpCodigoEmpresa.style = " border: 1px solid #ccc; "
-    }
-
-    if (senhaVar != confirmacaoSenhaVar) {
-
-        alert(`As senhas não coincidem!`)
-        inpSenhaConfirmacao.style = " border: 3px solid #ff0000 ;"
-        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
-
-    }
-}
-
-function validarLogin() {
-
-    alert(`Login inválido.`)
-    emailVar = inpEmail.value;
-    senhaVar = inpSenha.value;
-
-    if (emailVar == "") {
-
-        inpEmail.style = " border: 3px solid #ff0000 ;"
-    } else {
-        inpEmail.style = "border: 1px solid #ccc; "
-    }
-
-    if (senhaVar == "") {
-
-        inpSenha.style = " border: 3px solid #ff0000 ;"
-    }
-
-    else {
-        inpSenha.style = " border: 1px solid #ccc; "
-    }
-
-
-
-}
