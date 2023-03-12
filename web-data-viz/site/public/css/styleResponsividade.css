@@ -1,7 +1,16 @@
 /* Responsividade*/
 @media only screen and (max-width: 768px) {
+    .cadastro {
+        z-index: 10000;
+    }
+
+    .login {
+        z-index: 10000;
+    }
+
     header {
         position: none;
+        flex-direction: column;
     }
 
     header .container {
@@ -10,32 +19,37 @@
     }
 
     #logo {
-        width: 140px;
+        width: 190px;
         margin-top: 20px;
         margin-bottom: 10px;
     }
 
     #navbarList {
-        flex-direction: column;
+
+        flex-direction: row;
         margin-bottom: 20px;
     }
 
     #navbarList button,
     #navbarList a {
         margin: 10px 0px;
+        padding: 30px;
     }
 
     /* Site */
     #sec_01 {
-        height: 40vh;
+
+        height: 60vh;
         display: grid;
         flex-direction: column;
+        align-items: end;
         justify-content: center;
 
     }
 
     #sec_01 .container {
         width: 100%;
+        padding: 0px 0px 60px 0px;
 
     }
 
@@ -133,21 +147,49 @@
 
     }
 
+    #sec_06 form input {
+        width: 85%;
+        background-color: #4d4d4d;
+        color: white;
+        border: none;
+    }
+
     #sec_07 .container div {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     #sec_07 .container {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     #sec_07 .container div {
         width: 50%;
     }
 
+
+    #ctcDiv {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+    }
+
     #sec_07 .container button {
-        width: 100%;
+        padding: 20px 30px;
+        font-size: 20px;
+    }
+
+    #sec_07 #textInformation h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+    #sec_07 #textInformation h2 {
+        font-size: 20px;
+        text-align: center;
     }
 
     #sec_08 {

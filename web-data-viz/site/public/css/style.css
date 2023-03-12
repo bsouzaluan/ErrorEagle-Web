@@ -203,6 +203,7 @@ main {
   align-items: center;
   justify-content: center;
   align-self: center;
+  margin: 0px 40px 0px 0px;
 
 
 }
@@ -235,7 +236,7 @@ main {
   width: 50vw;
 }
 
-#middleIMGR{
+#middleIMGR {
   display: none;
 }
 
@@ -529,7 +530,7 @@ footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 footer .container h2 {
