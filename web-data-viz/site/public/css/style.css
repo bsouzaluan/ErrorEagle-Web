@@ -253,6 +253,11 @@ main {
   font-weight: bold;
 }
 
+#sec_03 .panelInfo p:hover{
+  color: red;
+  cursor: default;
+}
+
 #infoPanel {
 
   width: 30vw;
