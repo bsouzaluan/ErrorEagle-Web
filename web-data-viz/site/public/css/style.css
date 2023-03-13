@@ -238,7 +238,20 @@ main {
   border-radius: 8px;
 }
 
+#sec_03 .panelInfo h1{
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  padding: 30px;
+}
 
+#sec_03 .panelInfo p{
+  font-size: 40px;
+  text-align: center;
+  color: #EF403F;
+  padding: 30px;
+  font-weight: bold;
+}
 
 #infoPanel {
 
