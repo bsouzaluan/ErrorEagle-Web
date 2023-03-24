@@ -11,8 +11,7 @@
   <script src="./js/funcoes.js"></script>
 
   <link rel="icon" href="./assets/icon/" />
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -26,7 +25,7 @@
 <body>
 
   <nav class=" navbar navbar-expand-lg navbar-light header ">
-    <div class="container-xl">
+    <div class="container-xl ">
       <a class="navbar-brand" href="#">
         <img src="assets/icon/logo.svg" alt="">
       </a>
@@ -34,7 +33,7 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse d-flex justify-content-end " id="navbarNav">
+      <div class="collapse navbar-collapse  linksHeader  " id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link navLinkHeader" href="#">Home <span class="sr-only">(current)</span></a>
@@ -112,18 +111,82 @@
           eles podem apresentar bugs e falhas que atrapalham e frustram a experiência do cliente.</p>
       </div>
     </section>
-    <section id="sec_02">''
-      <div class="container">
-        <div class="card text-white mb-3 cardValores" style="max-width: 18rem;">
-          <div class="card-header ">Missão</div>
+    <section id="sec_02">
+
+      <div class="container d-flex  justify-content-around align-itens-center w=100">
+        <div class="  card text-white mb-3 cardValores border-0 w-50   h-25  ">
+          <div class="card-header cardHeaderValores text-center  ">
+            <h3 class="font-weight-bold align-middle">Missão</h3>
+          </div>
           <div class="card-body">
 
-            <p class="card-text">Nossa missão é oferecer uma solução de monitoramento avançada e confiável para totens
+            <p class="card-text py-2 px-2 fontSizeCard ">Nossa missão é oferecer uma solução de monitoramento avançada e
+              confiável
+              para
+              totens
               de
               supermercado, que
               ajude a melhorar a experiência do cliente e a eficiência do gerenciamento de estabelecimentos.</p>
           </div>
         </div>
+
+        <button type="button"
+          class="btn card border-0 cardValoresMiddles d-flex  justify-content-center align-items-center text-light  text-center w-50 animate__animated animate__pulse animate__infinite	infinite animate__slow	2s"
+          data-toggle="modal" data-target="#exampleModalCenter">
+          <h3 class="font-weight-bold">Valores</h3>
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Valores</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h3>
+                  Inovação
+                </h3>
+                <p>Estamos comprometidos com a constante melhoria e inovação em nossos serviços e soluções.</p>
+                <h3>Confiança</h3>
+                <p>Valorizamos a confiança que nossos clientes depositam em nossa equipe e em nossos produtos.</p>
+                <h3>Excelência</h3>
+                <p>Buscamos oferecer soluções de monitoramento de totens de supermercado de excelência, tanto em termos
+                  de tecnologia quanto de suporte ao cliente.</p>
+                <h3>Responsabilidade</h3>
+                <p>Temos responsabilidade em fornecer soluções eficazes e confiáveis, que atendam às necessidades de
+                  nossos clientes.</p>
+                <h3>Colaboração</h3>
+                <p>Trabalhamos em estreita colaboração com nossos clientes para entender suas necessidades e fornecer
+                  soluções personalizadas</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">fechar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="  card text-white mb-3 cardValores border-0 w-50   ">
+          <div class=" card-header cardHeaderValores text-center ">
+            <h3 class=" font-weight-bold align-middle">Visão</h3>
+          </div>
+          <div class="card-body">
+
+            <p class="  card-text py-2 px-2 fontSizeCard">Queremos ser reconhecidos como líderes no mercado de soluções
+              de
+              monitoramento
+              de
+              totens de supermercado,
+              oferecendo tecnologia avançada e suporte excepcional ao cliente.</p>
+          </div>
+        </div>
+
         <!-- <div class="firsAndLast ">
         <div>
           <h2>Missão</h2>
@@ -146,36 +209,7 @@
         </div>
       </div> -->
     </section>
-    <section id="sec_05">
-      <div class="container">
-        <h1>Valores</h1>
-        <div class="paineis">
-          <div class="panelInfo">
-            <h2>Inovação</h2>
-            <p>Estamos comprometidos com a constante melhoria e inovação em nossos serviços e soluções.</p>
-          </div>
-          <div class="panelInfo">
-            <h2>Confiança</h2>
-            <p>Valorizamos a confiança que nossos clientes depositam em nossa equipe e em nossos produtos.</p>
-          </div>
-          <div class="panelInfo">
-            <h2>Excelência</h2>
-            <p>Buscamos oferecer soluções de monitoramento de totens de supermercado de excelência, tanto em termos de
-              tecnologia quanto de suporte ao cliente.</p>
-          </div>
-          <div class="panelInfo">
-            <h2>Responsabilidade</h2>
-            <p>Temos responsabilidade em fornecer soluções eficazes e confiáveis, que atendam às necessidades de nossos
-              clientes.</p>
-          </div>
-          <div class="panelInfo">
-            <h2>Colaboração</h2>
-            <p>Trabalhamos em estreita colaboração com nossos clientes para entender suas necessidades e fornecer
-              soluções personalizadas que atendam a essas necessidades.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <section id="sec_03">
       <div class="container">
         <div id="infoPanel">
