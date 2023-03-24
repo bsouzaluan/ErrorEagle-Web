@@ -25,7 +25,7 @@
 <body>
 
   <nav class=" navbar navbar-expand-lg navbar-light header ">
-    <div class="container-xl ">
+    <div class="container-xl d-flex  ">
       <a class="navbar-brand" href="#">
         <img src="assets/icon/logo.svg" alt="">
       </a>
@@ -33,7 +33,7 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse  linksHeader  " id="navbarNav">
+      <div class="collapse  navbar-collapse  " id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link navLinkHeader" href="#">Home <span class="sr-only">(current)</span></a>
@@ -211,30 +211,44 @@
     </section>
 
     <section id="sec_03">
-      <div class="container">
-        <div id="infoPanel">
-          <h1>3</h1>
-          <h2>Anos de <br>experiência </h2>
-        </div>
-        <div id="panelGroup">
+      <div class="container-fluid d-flex align-items-center justify-content-center py-5 informacoes  ">
+        <div class=" mx-5">
           <div>
-            <div class="panelInfo">
-              <h1>Preços</h1>
-              <p>Condizentes</p>
+            <h1 class=" text-center font-weight-bold text-danger numberHeader">3</h1>
+            <p class="text-center text-white textHeader">Anos de experiência </p>
+          </div>
+        </div>
+        <div id="" class="card-group d-flex .flex-md-wrap w-50 mx-5">
+          <div class="card-columns w-100 h-100 d-flex justify-content-center align-items-center">
+            <div
+              class="card align-middle w-100 h-100 mx-2 my-4 py-4  justify-content-center text-center cardInformations">
+              <div class="card-body ">
+                <h2 class="card-title">Preços</h2>
+                <p class="card-text lead">Condizentes</p>
+              </div>
             </div>
-            <div class="panelInfo">
-              <h1>Clientes</h1>
-              <p>Satisfeitos</p>
+            <div
+              class="card align-middle w-100 h-100 mx-2 my-2 py-4  justify-content-center text-center cardInformations">
+              <div class="card-body ">
+                <h2 class="card-title">Alertas</h2>
+                <p class="card-text lead">Imediatos</p>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="panelInfo">
-              <h1>Alertas</h1>
-              <p>Imediatos</p>
+          <div class="card-columns .flex-md-wrap w-100 d-flex justify-content-center h-100 align-items-center">
+            <div
+              class="card align-middle w-100 h-100 mx-2 my-4 py-4  justify-content-center text-center cardInformations">
+              <div class="card-body ">
+                <h2 class="card-title">Clientes</h2>
+                <p class="card-text lead ">Satisfeitos</p>
+              </div>
             </div>
-            <div class="panelInfo">
-              <h1>Identifica</h1>
-              <p>A causa raiz</p>
+            <div
+              class="card align-middle w-100 h-100 mx-2 my-4 py-4 justify-content-center text-center cardInformations">
+              <div class="card-body ">
+                <h2 class="card-title">Identificamos</h2>
+                <p class="card-text lead ">A Causa Raiz</p>
+              </div>
             </div>
           </div>
         </div>

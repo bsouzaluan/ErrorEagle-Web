@@ -23,6 +23,12 @@ nav .navbar-nav li a {
     padding: 50px 0px;
 }
 
+#sec_03 {
+    background: rgb(24, 24, 24);
+    background: linear-gradient(90deg, rgba(24, 24, 24, 1) 0%, rgba(24, 24, 24, 1) 50%, rgba(17, 17, 17, 1) 50%);
+    padding: 50px 0px;
+}
+
 .cardValores {
     border-radius: 6px !important;
     background-color: #1E1E1E !important;
@@ -52,67 +58,19 @@ nav .navbar-nav li a {
     font-size: 1.1em;
 }
 
-#breathing-button {
-
-    border: 1px solid #ffffff00;
-    -webkit-animation: breathing 6s ease-in infinite normal;
-    animation: breathing 6s ease-in infinite normal;
-
-    font-size: 16px;
-    background: #3cc8b4;
-    color: #fff;
-    -webkit-font-smoothing: antialiased;
-    border-radius: 2px;
-    text-align: center;
+.cardInformations {
+    background-color: #CB1B29;
+    color: white;
 }
 
+.cardHeaderValores p {}
 
-@-webkit-keyframes breathing {
-    0% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-
-    25% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-
-    60% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-
-    100% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
-    }
+.numberHeader {
+    font-size: 7rem
 }
 
-@keyframes breathing {
-    0% {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-
-    25% {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-
-    60% {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-
-    100% {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-    }
+.textHeader {
+    font-size: 40px;
 }
 
 .linkHeader {
@@ -120,8 +78,16 @@ nav .navbar-nav li a {
     justify-content: end;
 }
 
-@media (min-width: 992px) {
+@media (max-width: 993px) {
     .linksHeader {
-        display: none;
+        display: flex;
+        justify-content: flex-start;
+
+    }
+}
+
+@media only screen and (max-width:1210px) {
+    .informacoes {
+        flex-direction: column;
     }
 }
