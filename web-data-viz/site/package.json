@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon --exec node app.js"
+    ,"sass":"node-sass --watch public/css/style.scss css/style.css",
+    "sass-min":"node-sass --watch public/css/style.scss css/style.min.css --output-style compressed"
   },
   "author": "Feito pelos desenvolvedores @ São Paulo Tech School / Bandtec Digital School",
   "license": "MIT",

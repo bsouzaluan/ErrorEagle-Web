@@ -1,4 +1,4 @@
-/* Responsividade*/
+/* 
 @media only screen and (max-width: 768px) {
     .cadastro {
         z-index: 10000;
@@ -36,7 +36,6 @@
         padding: 30px;
     }
 
-    /* Site */
     #sec_01 {
 
         height: 80vh;
@@ -255,5 +254,4 @@
         height: 90%;
     }
 }
-
-/* Responsividade*/
+ */
