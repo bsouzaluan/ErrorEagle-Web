@@ -263,9 +263,43 @@
     </section>
 
     <section id="sec_06">
-      <div class="container">
-        <form action="">
-          <h1>Entre em contato</h1>
+      <div class="container py-5">
+
+
+        <form class="text-light formEnviarMsg px-5 py-5 mx-3">
+          <h1 class="text-light text-center font-weight-bold py-5">Entre em contato</h1>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inpNome">Nome</label>
+              <input type="text" class="form-control" id="inpNome">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inpSobrenome">Sobrenome</label>
+              <input type="text" class="form-control" id="inpSobrenome">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inpTelefone">Telefone</label>
+              <input type="tel" class="form-control" id="inpTelefone">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inpEmail">Email</label>
+              <input type="email" class="form-control" id="inpEmail">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputCity">Mensagem</label>
+            <textarea type="text" class="form-control" id="inputCity"></textarea>
+          </div>
+
+          <button class="btn btnEnviar align-middle  w-100 py-3">Enviar</button>
+        </form>
+
+        <!-- <form action="">
+          
           <div id="inpsPart1"><input type="text" placeholder="Nome">
             <input type="text" placeholder="Sobrenome">
             <input type="text" placeholder="Email">
@@ -277,17 +311,26 @@
             <textarea placeholder="Digite a sua mensagem aqui" name="" id="" cols="30" rows="10"></textarea>
           </div>
           <div id="btnSubmit"> <button type="submit">Enviar</button></div>
-        </form>
+        </form> -->
       </div>
     </section>
-    <section id="sec_07">
+    <section id="sec_07" class="py-5">
       <div class="container">
 
-        <div id="textInformation">
+        <div class="jumbotron jumbotron-fluid my-5 jumbotronBgcolor">
+          <div class="container d-flex align-items-center justify-content-center jumbotronCollunm">
+            <div class=" mx-5 text-light">
+              <h1 class="display-4">Contrate agora!</h1>
+              <p class="lead">Faça sua conta agora e entraremos em contato!</p>
+            </div>
+            <div class=""> <button class="btnEnviar w-100 h-75 py-4 px-5 ">Cadastre-se</button> </div>
+          </div>
+        </div>
+        <!-- <div id="textInformation">
           <h1>Contrate agora!</h1>
           <h2>Faça sua conta agora e entraremos em contato!</h2>
         </div>
-        <div id="ctcDiv"><button onclick="abrirCadastro()">Cadastre-se</button></div>
+        <div id="ctcDiv"><button onclick="abrirCadastro()">Cadastre-se</button></div> -->
 
       </div>
     </section>
@@ -296,24 +339,22 @@
 
       </div>
     </section>
-    <section id="sec_09">
-      <div class="container">
-
-        <ul id="navbarList">
-
-          <button onclick="abrirCadastro()">Cadastrar</button>
-          <button onclick="abrirLogin()">Login</button>
-        </ul>
-
-      </div>
-    </section>
   </main>
-  <footer>
-    <div class="container">
-      <a id="logoLink" href="index.html"><img id="logo" src="assets/icon/logo.svg" alt="" /></a>
-      <h2>Direitos reservados aos alunos de 2° ADS</h2>
-      <h1>support@sptech</h1>
-    </div>
+  <footer class="d-flex text-light bg-dark flex-wrap justify-content-between align-items-center py-3 footerBG">
+    <p class="col-md-4 mb-0 text-muted ">© 2023 ErrorEagle, Inc</p>
+
+    <a class="py-2" href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="assets/icon/logo.svg" alt="">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
   </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
