@@ -21,119 +21,97 @@ function closeLogin() {
     loginId.style = "display:none;"
 
 }
-// function btnSairShow() {
-//     if (sessionStorage.length == 0) {
-//         console.log(sessionStorage.lenght)
-//         document.getElementById("sairBtn").style = "display:none;"
-//     } else {
-//         console.log(sessionStorage.lenght)
-//         document.getElementById("sairBtn").style = "display: inline-block;"
-//     }
-// }
+
 function validarCadastro() {
-    alert(`Por favor, insira os dados corretamente.`)
+    var nomeVar = nomeCadastro.value;
+    var razaoSocial = inpRazaoSocial.value;
+    var cnpj = inpCNPJ.value;
+    var telefone = inpTelefone.value;
+    var telefone1 = inpTelefone1.value;
+    var emailVar = inpEmailCadastro.value;
+    var senhaVar = inpSenhaCadastro.value;
+    var confirmacaoSenhaVar = inpSenhaConfirmacao.value;
 
-    nomeVar = nomeCadastro.value;
-    razaoSocial = inpRazaoSocial.value;
-    cnpj = inpCNPJ.value;
-    telefone = inpTelefone.value;
-    telefone1 = inpTelefone1.value;
-    emailVar = inpEmailCadastro.value;
-    senhaVar = inpSenhaCadastro.value;
-    confirmacaoSenhaVar = inpSenhaConfirmacao.value;
+    let hasEmptyFields = false; // flag para verificar se há campos vazios
 
-    if (nomeVar == "" ||
-        razaoSocial == "" ||
-        cnpj == "" ||
-        telefone == "" ||
-        telefone1 == "" ||
-        emailVar == "" ||
-        senhaVar == "" ||
-        confirmacaoSenhaVar == ""
-    ) {
-        nomeCadastro.style = " border: 3px solid #ff0000 ;"
-        inpRazaoSocial.style = " border: 3px solid #ff0000 ;"
-        inpCNPJ.style = " border: 3px solid #ff0000 ;"
-        inpTelefone.style = " border: 3px solid #ff0000 ;"
-        inpTelefone1.style = " border: 3px solid #ff0000 ;"
-        inpEmailCadastro.style = " border: 3px solid #ff0000 ;"
-        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
-        inpSenhaConfirmacao.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (nomeVar === "") {
+        nomeCadastro.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        nomeCadastro.style = "border: 1px solid #ccc; "
-
+        nomeCadastro.style = "border: 1px solid #ccc; ";
     }
 
-    if (nomeVar == "") {
-        nomeCadastro.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (razaoSocial === "") {
+        inpRazaoSocial.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        nomeCadastro.style = "border: 1px solid #ccc; "
-
+        inpRazaoSocial.style = "border: 1px solid #ccc; ";
     }
 
-    if (razaoSocial == "") {
-        inpRazaoSocial.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (cnpj === "") {
+        inpCNPJ.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpRazaoSocial.style = "border: 1px solid #ccc; "
-
+        inpCNPJ.style = "border: 1px solid #ccc; ";
     }
-    if (cnpj == "") {
-        inpCNPJ.style = " border: 3px solid #ff0000 ;"
-        return false;
 
+    if (telefone === "") {
+        inpTelefone.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpCNPJ.style = "border: 1px solid #ccc; "
-
+        inpTelefone.style = "border: 1px solid #ccc; ";
     }
 
-    if (telefone == "") {
-        inpTelefone.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (telefone1 === "") {
+        inpTelefone1.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpTelefone.style = "border: 1px solid #ccc; "
-
+        inpTelefone1.style = "border: 1px solid #ccc; ";
     }
 
-    if (telefone1 == "") {
-        inpTelefone1.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (emailVar === "") {
+        inpEmailCadastro.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpTelefone1.style = "border: 1px solid #ccc; "
-
+        inpEmailCadastro.style = "border: 1px solid #ccc; ";
     }
 
-    if (emailVar == "") {
-
-        inpEmailCadastro.style = " border: 3px solid #ff0000 ;"
-        return false;
-
+    if (senhaVar === "") {
+        inpSenhaCadastro.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpEmailCadastro.style = " border: 1px solid #ccc;  "
-
+        inpSenhaCadastro.style = "border: 1px solid #ccc;";
     }
 
-    if (senhaVar == "") {
+    if (confirmacaoSenhaVar === "") {
+        inpSenhaConfirmacao.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
+    } else {
+        inpSenhaConfirmacao.style = "border: 1px solid #ccc;";
+    }
 
-        inpSenhaCadastro.style = " border: 3px solid #ff0000 ;"
+    if (hasEmptyFields) {
+        Swal.fire({
+            title: 'Preencha todos os campos',
+            icon: 'error',
+            confirmButtonText: 'Continuar'
+        })
         return false;
     }
 
-    else {
-        inpSenhaCadastro.style = "border: 1px solid #ccc;"
-
+    if (inpSenhaCadastro.value != inpSenhaConfirmacao.value) {
+        inpSenhaConfirmacao.style = "border: 3px solid #ff0000 ;";
+        inpSenhaCadastro.style = "border: 3px solid #ff0000 ;";
+        Swal.fire({
+            title: 'Senhas não coincidem',
+            icon: 'error',
+            confirmButtonText: 'Continuar'
+        })
+        return false;
     }
-
-
-
+    return true; // retorna verdadeiro se não há campos vazios
 }
+
 function limparErros() {
     nomeVar = nomeCadastro.value;
     razaoSocial = inpRazaoSocial.value;
@@ -143,15 +121,17 @@ function limparErros() {
     emailVar = inpEmailCadastro.value;
     senhaVar = inpSenhaCadastro.value;
     confirmacaoSenhaVar = inpSenhaConfirmacao.value;
+    const limpar = setTimeout(() => {
+        nomeCadastro.style = " border: 3px solid #ccc; "
+        inpRazaoSocial.style = " border: 3px solid #ccc; "
+        inpCNPJ.style = " border: 3px solid #ccc; ;"
+        inpTelefone.style = " border: 3px solid #ccc; "
+        inpTelefone1.style = " border: 3px solid #ccc; "
+        inpEmailCadastro.style = " border: 3px solid #ccc; "
+        inpSenhaCadastro.style = " border: 3px solid #ccc; "
+        inpSenhaConfirmacao.style = " border: 3px solid #ccc; "
+    }, 5000)
 
-    nomeCadastro.style = " border: 3px solid #ccc; ;"
-    inpRazaoSocial.style = " border: 3px solid #ccc; ;"
-    inpCNPJ.style = " border: 3px solid #ccc; ;"
-    inpTelefone.style = " border: 3px solid #ccc; ;"
-    inpTelefone1.style = " border: 3px solid #ccc; ;"
-    inpEmailCadastro.style = " border: 3px solid #ccc; ;"
-    inpSenhaCadastro.style = " border: 3px solid #ccc; ;"
-    inpSenhaConfirmacao.style = " border: 3px solid #ccc; ;"
 }
 function validarLogin() {
 
@@ -186,7 +166,7 @@ function entrar() {
     var emailVar = inpEmail.value;
     var senhaVar = inpSenha.value;
 
-    if (emailVar == "" || senhaVar == "") {
+    if (emailVar == "" & senhaVar == "") {
         validarLogin();
         //cardErro.style.display = "block";
         mensagem_erro.innerHTML =
@@ -249,15 +229,15 @@ function cadastrar() {
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nomeCadastro.value;
+    var razaoSocial = inpRazaoSocial.value;
+    var cnpj = inpCNPJ.value;
+    var telefone = inpTelefone.value;
+    var telefone1 = inpTelefone1.value;
     var emailVar = inpEmailCadastro.value;
     var senhaVar = inpSenhaCadastro.value;
-    var confirmacaoSenhaVar = inpSenhaConfirmacao.value;
-
-
-
 
     if (validarCadastro() == true) {
-        fetch("/usuarios/cadastrar", {
+        fetch("/empresa/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -266,6 +246,10 @@ function cadastrar() {
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
+                razaoSocialServer: razaoSocial,
+                cnpjServer: cnpj,
+                telefoneServer: telefone,
+                telefoneOptionalServer: telefone1,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
             }),
@@ -295,6 +279,8 @@ function cadastrar() {
             });
 
         return false;
+    } else {
+        console.log("Não entrou no cadastro")
     }
 
     // Enviando o valor da nova input
@@ -314,7 +300,7 @@ new Cleave('.input-phone1', {
     blocks: [0, 2, 5, 4]
 });
 
-var cleave = new Cleave('.cnpjMask', {
+new Cleave('.cnpjMask', {
     delimiters: ['.', '.', '/', '-'],
     blocks: [2, 3, 3, 4, 2],
 
