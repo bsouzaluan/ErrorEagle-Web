@@ -37,14 +37,14 @@
           <div class="md-form mb-2">
             <i class="fas fa-envelope prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-            <input type="email" id="inpEmail" class="form-control validate">
+            <input type="email" id="inpEmail" class="form-control validate" required>
 
           </div>
 
           <div class="md-form mb-2">
             <i class="fas fa-lock prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-            <input type="password" id="inpSenha" class="form-control validate">
+            <input type="password" id="inpSenha" class="form-control validate" required>
           </div>
 
         </div>
@@ -68,43 +68,45 @@
           <div class="md-form mb-2">
             <i class="fas fa-user prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="nomeCadastro">Nome Responsavel*</label>
-            <input type="text" id="nomeCadastro" class="form-control validate">
+            <input type="text" id="nomeCadastro" class="form-control validate" required>
 
           </div>
           <div class="md-form mb-2">
             <i class="fas fa-user prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpRazaoSocial">Razão Social*</label>
-            <input type="text" id="inpRazaoSocial" class="form-control validate">
+            <input type="text" id="inpRazaoSocial" class="form-control validate" required>
           </div>
 
           <div class="md-form mb-2">
             <i class="fas fa-user prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpCNPJ">CNPJ*</label>
             <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpCNPJ"
-              class="form-control cnpjMask validate" placeholder="##.###.###/####-##">
+              class="form-control cnpjMask validate" placeholder="##.###.###/####-##" required>
           </div>
           <div class="md-form mb-2">
             <i class="fas fa-user prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpTelefone1">Telefone *</label>
             <input type="tel" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpTelefone1"
               oninput="this.value = this.value.replace(/[^0-9]/g, '')" class=" input-phone1  form-control validate"
-              placeholder="(99) 99999-9999">
+              placeholder="(99) 99999-9999" required>
           </div>
           <div class="md-form mb-2">
             <i class="fas fa-user prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpTelefone">Telefone </label>
-            <input type="tel" id="inpTelefone" class=" input-phone form-control validate" placeholder="(99) 99999-9999">
+            <input type="tel" id="inpTelefone" class=" input-phone form-control validate" placeholder="(99) 99999-9999"
+              required>
           </div>
           <div class="md-form mb-2">
             <i class="fas fa-envelope prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpEmailCadastro">Email *</label>
-            <input type="email" id="inpEmailCadastro" class="form-control validate" placeholder="seunome@provedor.com">
+            <input type="email" id="inpEmailCadastro" class="form-control validate" placeholder="seunome@provedor.com"
+              required>
           </div>
 
           <div class="md-form mb-2">
             <i class="fas fa-lock prefix grey-text"></i>
             <label data-error="wrong" data-success="right" for="inpSenhaCadastro">Senha *</label>
-            <input type="password" id="inpSenhaCadastro" class="form-control validate">
+            <input type="password" id="inpSenhaCadastro" class="form-control validate" required>
 
           </div>
           <div class="md-form mb-2">
@@ -370,7 +372,7 @@
     </ul>
   </footer>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
   integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>

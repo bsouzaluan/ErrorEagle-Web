@@ -178,3 +178,7 @@ nav .navbar-nav li a {
 .footerBG {
     background-color: #121212 !important;
 }
+
+.form-control {
+    transition: .5s !important;
+}
