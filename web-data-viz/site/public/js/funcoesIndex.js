@@ -133,94 +133,98 @@ function limparErros() {
     }, 5000)
 
 }
+
 function validarLogin() {
+    var emailVar = inpEmailLogin.value;
+    var senhaVar = inpSenhaLogin.value;
 
-    alert(`Login inválido.`)
-    emailVar = inpEmail.value;
-    senhaVar = inpSenha.value;
+    let hasEmptyFields = false; // flag para verificar se há campos vazios
 
-    if (emailVar == "") {
-
-        inpEmail.style = " border: 3px solid #ff0000 ;"
+    if (emailVar === "") {
+        inpEmailLogin.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
     } else {
-        inpEmail.style = "border: 1px solid #ccc; "
+        inpEmailLogin.style = "border: 1px solid #ccc; ";
     }
 
-    if (senhaVar == "") {
+    if (senhaVar === "") {
+        inpSenhaLogin.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
 
-        inpSenha.style = " border: 3px solid #ff0000 ;"
-    }
-
-    else {
-        inpSenha.style = " border: 1px solid #ccc; "
-    }
-
-
-
-}
-function entrar() {
-    console.log("Entrei na function entrar")
-    // aguardar();
-
-
-    var emailVar = inpEmail.value;
-    var senhaVar = inpSenha.value;
-
-    if (emailVar == "" & senhaVar == "") {
-        validarLogin();
-        //cardErro.style.display = "block";
-        mensagem_erro.innerHTML =
-            "(Mensagem de erro para todos os campos em branco)";
-        //finalizarAguardar();
-        return false;
     } else {
-        //setInterval(sumirMensagem, 5000);
+        inpSenhaLogin.style = "border: 1px solid #ccc;";
     }
 
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar,
-        }),
-    })
-        .then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!");
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then((json) => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-                });
-            } else {
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then((texto) => {
-                    console.error(texto);
-                    //finalizarAguardar(texto);
-                });
-            }
+    if (hasEmptyFields == true) {
+        Swal.fire({
+            title: 'Preencha todos os campos',
+            icon: 'error',
+            confirmButtonText: 'Continuar'
         })
-        .catch(function (erro) {
-            console.log(erro);
-        });
+        console.log("hasEmptyFields")
+        return false;
+    }
+
+    // Aqui você pode adicionar a lógica para verificar se o email e senha são válidos.
+    // Isso depende da forma como você está autenticando o usuário, seja por meio de um banco de dados ou outra fonte de dados.
+
+    return true; // retorna verdadeiro se não há campos vazios
+}
+
+
+function entrar() {
+
+    // aguardar();
+    if (validarLogin() == true) {
+        var emailVar = inpEmailLogin.value;
+        var senhaVar = inpSenhaLogin.value;
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!");
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then((json) => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+
+                        setTimeout(function () {
+
+                            window.location = "./dashboard/cards.html";
+                        }, 1000); // apenas para exibir o loading
+                    });
+                } else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then((texto) => {
+                        console.error(texto);
+                        //finalizarAguardar(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    } else {
+        console.log("Erro na validação")
+    }
 
     return false;
 }
