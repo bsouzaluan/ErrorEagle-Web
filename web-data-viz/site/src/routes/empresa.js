@@ -7,17 +7,29 @@ router.get("/", function (req, res) {
     empresaController.testar(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    empresaController.listar(req, res);
+router.get("/listar/empresa", function (req, res) {
+    empresaController.listarEmpresa(req, res);
 });
 
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-router.post("/cadastrar", function (req, res) {
-    empresaController.cadastrar(req, res);
+router.get("/listarFuncionario", function (req, res) {
+    empresaController.listarFuncionario(req, res);
+});
+
+router.post("/cadastrar/empresa", function (req, res) {
+    empresaController.cadastrarEmpresa(req, res);
+});
+router.post("/cadastrar/endereco", function (req, res) {
+    empresaController.cadastrarEndereco(req, res);
 })
-
-router.post("/autenticar", function (req, res) {
-    empresaController.entrar(req, res);
+router.post("/autenticar/funcionario", function (req, res) {
+    empresaController.entrarFuncionario(req, res);
 });
+router.post("/cadastrar/funcionario", function (req, res) {
+    empresaController.cadastrarFuncionario(req, res);
+});
+
+router.put("/autenticar/empresa", function (req, res) {
+    empresaController.autenticarEmpresa(req, res);
+})
 
 module.exports = router;
