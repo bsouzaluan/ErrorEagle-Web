@@ -7,8 +7,8 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function listar(req, res) {
-    empresaModel.listar()
+function listarEmpresa(req, res) {
+    empresaModel.listarEmpresa()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -23,8 +23,24 @@ function listar(req, res) {
             }
         );
 }
+function listarFuncionario(req, res) {
+    var nome = req.body.nomeFuncionarioServer;
+    var email = req.body.emailFuncionarioServer;
 
-function entrar(req, res) {
+    if (email.)
+
+        empresaModel.listarFuncionario();
+}
+function autenticarEmpresa() {
+    empresaModel.autenticarEmpresa();
+}
+
+function cadastrarFuncionario(req, res) {
+    empresaModel.cadastrarFuncionario()
+}
+
+function entrarFuncionario(req, res) {
+
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
@@ -34,7 +50,7 @@ function entrar(req, res) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
 
-        empresaModel.entrar(email, senha)
+        empresaModel.entrarFuncionario(email, senha)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -59,16 +75,21 @@ function entrar(req, res) {
     }
 
 }
-
-function cadastrar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+function cadastrarEmpresa(req, res) {
     var nomeResponsavel = req.body.nomeServer;
     var razaoSocial = req.body.razaoSocialServer;
     var cnpj = cnpj = req.body.cnpjServer;
     var telefone = req.body.telefoneServer;
     var telefone1 = req.body.telefoneOptionalServer;
     var email = req.body.emailServer;
+    empresaModel.cadastrarEndereco()
+}
+function cadastrarFuncionario(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nome = req.body.nomeFuncionarioServer;
+    var email = req.body.emailFuncionarioServer;
     var senha = req.body.senhaServer;
+    var telefone = req.body
 
     // Faça as validações dos valores
     if (nomeResponsavel == undefined) {
@@ -105,8 +126,11 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    entrar,
-    cadastrar,
-    listar,
+    entrarFuncionario,
+    cadastrarEmpresa,
+    cadastrarFuncionario,
+    listarFuncionarios,
+    autenticarEmpresa,
+    listarEmpresa,
     testar
 }
