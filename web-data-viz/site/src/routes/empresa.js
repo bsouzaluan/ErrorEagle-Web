@@ -11,7 +11,7 @@ router.get("/listar/empresa", function (req, res) {
     empresaController.listarEmpresa(req, res);
 });
 
-router.get("/listarFuncionario", function (req, res) {
+router.get("/listar/Funcionario", function (req, res) {
     empresaController.listarFuncionario(req, res);
 });
 
