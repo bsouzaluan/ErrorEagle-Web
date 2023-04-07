@@ -159,26 +159,46 @@ function cadastrarEmpresa(req, res) {
 function cadastrarEndereco(req, res) {
 
     var cep = req.body.cepServer;
-    var bairro = req.body.cepServer;
+    var bairro = req.body.bairroServer;
     var rua = req.body.ruaServer;
     var numero = req.body.numeroServer;
     var estado = req.body.estadoServer;
     var cidade = req.body.cidadeServer;
+    console.log(req.body);
 
-    empresaModel.cadastrarEndereco(cep, bairro, rua, numero, estado, cidade).then(
-        function (resultado) {
-            res.json(resultado);
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log(
-                "\nHouve um erro ao realizar o cadastro! Erro: ",
-                erro.sqlMessage
+    if (cep == undefined) {
+        res.status(400).send("O cep está undefined!");
+    } else if (bairro == undefined) {
+        res.status(400).send("o bairro está undefined!");
+    } else if (rua == undefined) {
+        res.status(400).send("a rua está undefined!");
+    } else if (numero == undefined) {
+        res.status(400).send("O numero está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("O estado está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("A cidade está undefined!");
+    } else {
+        empresaModel.cadastrarEndereco(cep, bairro, rua, numero, estado, cidade)
+            .then(
+                function (resultado) {
+                    console.log(resultado)
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro do endereço! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
             );
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
+    }
+
+
+
 }
 
 
