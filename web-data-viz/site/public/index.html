@@ -26,7 +26,7 @@
   <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content ">
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-weight-bold">Login</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -56,67 +56,117 @@
   </div>
   <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+    <div class="modal-dialog my-modal-dialog d-flex justify-content-center align-items-center h-100  " role="document">
+      <div class="modal-content formModal">
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-weight-bold">Cadastrar</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body mx-3" onmouseenter="limparErros()">
-          <div class="md-form mb-2">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="nomeCadastro">Nome Responsavel*</label>
-            <input type="text" id="nomeCadastro" class="form-control validate" required>
+        <div class="modal-body mx-3 d-flex justify-content-center" style="width: 700px;" onmouseenter="limparErros()">
 
-          </div>
-          <div class="md-form mb-2">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpRazaoSocial">Razão Social*</label>
-            <input type="text" id="inpRazaoSocial" class="form-control validate" required>
-          </div>
+          <div class="mx-4 w-50">
+            <div class="md-form mb-2 ">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpRazaoSocial">Razão Social*</label>
+              <input type="text" id="inpRazaoSocial" class="form-control validate" required>
+            </div>
 
-          <div class="md-form mb-2">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpCNPJ">CNPJ*</label>
-            <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpCNPJ"
-              class="form-control cnpjMask validate" placeholder="##.###.###/####-##" required>
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpCNPJ">CNPJ*</label>
+              <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpCNPJ"
+                class="form-control cnpjMask validate" placeholder="##.###.###/####-##" required>
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpTelefone1">Telefone *</label>
+              <input type="tel" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpTelefone1"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')" class=" input-phone1  form-control validate"
+                placeholder="(99) 99999-9999" required>
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpTelefone">Telefone </label>
+              <input type="tel" id="inpTelefone" class=" input-phone form-control validate"
+                placeholder="(99) 99999-9999" required>
+            </div>
           </div>
-          <div class="md-form mb-2">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpTelefone1">Telefone *</label>
-            <input type="tel" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="inpTelefone1"
-              oninput="this.value = this.value.replace(/[^0-9]/g, '')" class=" input-phone1  form-control validate"
-              placeholder="(99) 99999-9999" required>
-          </div>
-          <div class="md-form mb-2">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpTelefone">Telefone </label>
-            <input type="tel" id="inpTelefone" class=" input-phone form-control validate" placeholder="(99) 99999-9999"
-              required>
-          </div>
-          <div class="md-form mb-2">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpEmailCadastro">Email *</label>
-            <input type="email" id="inpEmailCadastro" class="form-control validate" placeholder="seunome@provedor.com"
-              required>
-          </div>
+          <div class="mx-4 w-50">
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="nomeCadastro">Nome Responsavel*</label>
+              <input type="text" id="nomeCadastro" class="form-control validate" required>
 
-          <div class="md-form mb-2">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpSenhaCadastro">Senha *</label>
-            <input type="password" id="inpSenhaCadastro" class="form-control validate" required>
+            </div>
 
+            <div class="md-form mb-2">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpEmailCadastro">Email Responsavel *</label>
+              <input type="email" id="inpEmailCadastro" class="form-control validate" placeholder="seunome@empresa.com"
+                required>
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpTelefoneFuncionario">Telefone Responsavel *
+              </label>
+              <input type="tel" id="inpTelefoneFuncionario" class=" input-phone2 form-control validate"
+                placeholder="(99) 99999-9999" required>
+            </div>
+
+            <div class="md-form mb-2">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpSenhaCadastro">Senha *</label>
+              <input type="password" id="inpSenhaCadastro" class="form-control validate" required>
+
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpSenhaConfirmacao">Confirme a senha *</label>
+              <input type="password" id="inpSenhaConfirmacao" class="form-control validate">
+            </div>
           </div>
-          <div class="md-form mb-2">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="inpSenhaConfirmacao">Confirme a senha *</label>
-            <input type="password" id="inpSenhaConfirmacao" class="form-control validate">
+          <div class="mx-4 w-50">
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpCep">Cep*</label>
+              <input type="text" id="inpCep" class="form-control validate" required>
+
+            </div>
+
+            <div class="md-form mb-2">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpBairro">Bairro*</label>
+              <input type="email" id="inpBairro" class="form-control validate" required>
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpRua">Rua*
+              </label>
+              <input type="tel" id="inpRua" class=" form-control validate" placeholder="" required>
+            </div>
+
+            <div class="md-form mb-2">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpNumero">Numero*</label>
+              <input type="text" id="inpNumero" class="form-control validate" required>
+
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpEstado">Estado*</label>
+              <input type="text" id="inpEstado" class="form-control validate">
+            </div>
+            <div class="md-form mb-2">
+              <i class="fas fa-lock prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="inpCidade">Cidade*</label>
+              <input type="text" id="inpCidade" class="form-control validate">
+            </div>
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-deep-orange" onclick="cadastrar()">Cadastrar</button>
+          <button class="btn btn-deep-orange" onclick="cadastrarEmpresaFuncionarioResponsavel()">Cadastrar</button>
         </div>
       </div>
     </div>
@@ -190,7 +240,7 @@
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content formModal">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Valores</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
