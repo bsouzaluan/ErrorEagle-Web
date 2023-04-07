@@ -79,7 +79,7 @@ function cadastrarFuncionario(req, res) {
     var emailFuncionario = req.body.emailFuncionarioServer;
     var senhaFuncionario = req.body.senhaFuncionarioServer;
     var telefoneFuncionario = req.body.telefoneFuncionarioServer;
-    var empresaFuncionario = req.body.empresaFuncionario;
+    var empresaFuncionario = req.body.empresaFuncionarioServer;
     var supervisor = req.body.supevisorOfFuncionario;
     if (nomeFuncionario == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -110,20 +110,20 @@ function cadastrarFuncionario(req, res) {
         )
     }
 
-    empresaModel.cadastrarFuncionario()
+
 }
 function cadastrarEmpresa(req, res) {
 
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nomeResponsavel = req.body.nomeServer;
+    var nomeFuncionario = req.body.nomeFuncionarioServer;
     var razaoSocial = req.body.razaoSocialServer;
     var cnpj = cnpj = req.body.cnpjServer;
     var telefone = req.body.telefoneServer;
     var telefone1 = req.body.telefoneOptionalServer;
-    var email = req.body.emailServer;
+    var email = req.body.dominioServer;
 
     // Faça as validações dos valores
-    if (nome == undefined) {
+    if (nomeFuncionario == undefined) {
         res.status(400).send("O nome do responsável está undefined!");
     } else if (razaoSocial == undefined) {
         res.status(400).send("A razão social está undefined!");
@@ -131,6 +131,8 @@ function cadastrarEmpresa(req, res) {
         res.status(400).send("O CNPJ está undefined!");
     } else if (telefone == undefined) {
         res.status(400).send("O telefone está undefined!");
+    } else if (telefone1 == undefined) {
+        telefone = "";
     } else if (email == undefined) {
         res.status(400).send("O email está undefined!");
     } else {
@@ -182,8 +184,11 @@ function cadastrarEndereco(req, res) {
 
 function entrarFuncionario(req, res) {
 
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var email = req.params.email;
+    var senha = req.params.senha;
+
+    console.log(email);
+    console.log(senha);
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
