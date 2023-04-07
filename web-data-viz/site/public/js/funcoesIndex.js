@@ -22,24 +22,18 @@ function closeLogin() {
 
 }
 
-function validarCadastro() {
-    var nomeVar = nomeCadastro.value;
-    var razaoSocial = inpRazaoSocial.value;
-    var cnpj = inpCNPJ.value;
-    var telefone = inpTelefone.value;
-    var telefone1 = inpTelefone1.value;
-    var emailVar = inpEmailCadastro.value;
-    var senhaVar = inpSenhaCadastro.value;
-    var confirmacaoSenhaVar = inpSenhaConfirmacao.value;
+function checkCamposCadastroEmpresa() {
+    var razaoSocial = inpRazaoSocial.value
+    var cnpj = inpCNPJ.value
+    var telefone1 = inpTelefone1.value
+    var telefone = inpTelefone.value
+    var nomeFuncionario = nomeCadastro.value
+    var emailFuncionario = inpEmailCadastro.value
+    var telefoneFuncionario = inpTelefoneFuncionario.value
+    var senhaVar = inpSenhaCadastro.value
+    var senhaConfirmVar = inpSenhaConfirmacao.value
 
     let hasEmptyFields = false; // flag para verificar se há campos vazios
-
-    if (nomeVar === "") {
-        nomeCadastro.style = "border: 3px solid #ff0000 ;";
-        hasEmptyFields = true;
-    } else {
-        nomeCadastro.style = "border: 1px solid #ccc; ";
-    }
 
     if (razaoSocial === "") {
         inpRazaoSocial.style = "border: 3px solid #ff0000 ;";
@@ -55,13 +49,6 @@ function validarCadastro() {
         inpCNPJ.style = "border: 1px solid #ccc; ";
     }
 
-    if (telefone === "") {
-        inpTelefone.style = "border: 3px solid #ff0000 ;";
-        hasEmptyFields = true;
-    } else {
-        inpTelefone.style = "border: 1px solid #ccc; ";
-    }
-
     if (telefone1 === "") {
         inpTelefone1.style = "border: 3px solid #ff0000 ;";
         hasEmptyFields = true;
@@ -69,26 +56,50 @@ function validarCadastro() {
         inpTelefone1.style = "border: 1px solid #ccc; ";
     }
 
-    if (emailVar === "") {
+    if (telefone === "") {
+        inpTelefone.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
+    } else {
+        inpTelefone.style = "border: 1px solid #ccc; ";
+    }
+
+    if (nomeFuncionario === "") {
+        nomeCadastro.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
+    } else {
+        nomeCadastro.style = "border: 1px solid #ccc; ";
+    }
+
+    if (emailFuncionario === "") {
         inpEmailCadastro.style = "border: 3px solid #ff0000 ;";
         hasEmptyFields = true;
     } else {
         inpEmailCadastro.style = "border: 1px solid #ccc; ";
     }
 
+
+
+    if (telefoneFuncionario === "") {
+        inpTelefoneFuncionario.style = "border: 3px solid #ff0000 ;";
+        hasEmptyFields = true;
+    } else {
+        inpTelefoneFuncionario.style = "border: 1px solid #ccc; ";
+    }
+
     if (senhaVar === "") {
         inpSenhaCadastro.style = "border: 3px solid #ff0000 ;";
         hasEmptyFields = true;
     } else {
-        inpSenhaCadastro.style = "border: 1px solid #ccc;";
+        inpSenhaCadastro.style = "border: 1px solid #ccc; ";
     }
 
-    if (confirmacaoSenhaVar === "") {
+    if (senhaConfirmVar === "") {
         inpSenhaConfirmacao.style = "border: 3px solid #ff0000 ;";
         hasEmptyFields = true;
     } else {
-        inpSenhaConfirmacao.style = "border: 1px solid #ccc;";
+        inpSenhaConfirmacao.style = "border: 1px solid #ccc; ";
     }
+
 
     if (hasEmptyFields) {
         Swal.fire({
@@ -122,14 +133,15 @@ function limparErros() {
     senhaVar = inpSenhaCadastro.value;
     confirmacaoSenhaVar = inpSenhaConfirmacao.value;
     const limpar = setTimeout(() => {
-        nomeCadastro.style = " border: 3px solid #ccc; "
-        inpRazaoSocial.style = " border: 3px solid #ccc; "
-        inpCNPJ.style = " border: 3px solid #ccc; ;"
-        inpTelefone.style = " border: 3px solid #ccc; "
-        inpTelefone1.style = " border: 3px solid #ccc; "
-        inpEmailCadastro.style = " border: 3px solid #ccc; "
-        inpSenhaCadastro.style = " border: 3px solid #ccc; "
-        inpSenhaConfirmacao.style = " border: 3px solid #ccc; "
+        nomeCadastro.style = " border: 1px solid #ccc; "
+        inpRazaoSocial.style = " border: 1px solid #ccc; "
+        inpCNPJ.style = " border: 1px solid #ccc; ;"
+        inpTelefone.style = " border: 1px solid #ccc; "
+        inpTelefone1.style = " border: 1px solid #ccc; "
+        inpTelefoneFuncionario.style = " border: 1px solid #ccc; "
+        inpEmailCadastro.style = " border: 1px solid #ccc; "
+        inpSenhaCadastro.style = " border: 1px solid #ccc; "
+        inpSenhaConfirmacao.style = " border: 1px solid #ccc; "
     }, 5000)
 
 }
@@ -181,15 +193,11 @@ function entrar() {
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
-        fetch("/usuarios/autenticar", {
-            method: "POST",
+        fetch(`empresa/autenticar/funcionario/${emailVar}/${senhaVar}`, {
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-            }),
         })
             .then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!");
@@ -228,20 +236,38 @@ function entrar() {
 
     return false;
 }
-function cadastrar() {
+function cadastrarEmpresaFuncionarioResponsavel() {
     //aguardar();
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nomeCadastro.value;
-    var razaoSocial = inpRazaoSocial.value;
-    var cnpj = inpCNPJ.value;
-    var telefone = inpTelefone.value;
-    var telefone1 = inpTelefone1.value;
-    var emailVar = inpEmailCadastro.value;
+    var cep = inpCep.value;
+    var bairro = inpBairro.value;
+    var rua = inpRua.value;
+    var numero = inpNumero.value;
+    var estado = inpEstado.value;
+    var cidade = inpCidade.value;
+
+    var nomeFuncionario = nomeCadastro.value;
+    var emailFuncionario = inpEmailCadastro.value;
+    var telefoneFuncionario = inpTelefoneFuncionario.value;
     var senhaVar = inpSenhaCadastro.value;
 
-    if (validarCadastro() == true) {
-        fetch("/empresa/cadastrar", {
+    var razaoSocial = inpRazaoSocial.value;
+    var cnpj = inpCNPJ.value;
+    var telefone1 = inpTelefone1.value;
+    var telefone = inpTelefone.value;
+    var dominioVar = emailFuncionario.match(/@(.*)$/);
+
+
+    var idEmpresaAtual;
+    var idEnderecoAtual;
+    // emailServer: emailVar,
+    // senhaServer: senhaVar,
+
+    if (checkCamposCadastroEmpresa()) {
+
+
+        fetch("/empresa/cadastrar/endereco", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -249,34 +275,114 @@ function cadastrar() {
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
+                cepServer: cep,
+                bairroServer: bairro,
+                ruaServer: rua,
+                numeroServer: numero,
+                estadoServer: estado,
+                cidadeServer: cidade
+            }),
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                resposta.json().then((json) => {
+                    idEnderecoAtual = json.id;
+                })
+                // cardErro.style.display = "block";
+
+                //mensagem_erro.innerHTML =
+                // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+
+        fetch("/empresa/cadastrar/empresa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
                 razaoSocialServer: razaoSocial,
                 cnpjServer: cnpj,
                 telefoneServer: telefone,
                 telefoneOptionalServer: telefone1,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
+                dominioServer: dominioVar,
+                fkEnderecoServer: idEnderecoAtual
             }),
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                resposta.json().then((json) => {
+
+                    idEmpresaAtual = json.id;
+
+                })
+                // cardErro.style.display = "block";
+
+                //mensagem_erro.innerHTML =
+                // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
         })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta);
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
 
-                if (resposta.ok) {
-                    // cardErro.style.display = "block";
+        fetch("/empresa/cadastrar/funcionario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeFuncionarioServer: nomeFuncionario,
+                emailFuncionarioServer: emailVar,
+                senhaFuncionarioServer: senhaVar,
+                telefoneFuncionarioServer: telefoneFuncionario,
+                empresaFuncionarioServer: idEmpresaAtual
+            }),
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
 
-                    //mensagem_erro.innerHTML =
-                    // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
 
-                    setTimeout(() => {
-                        window.location = "index.html";
-                    }, "2000");
+                //mensagem_erro.innerHTML =
+                // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-                    // limparFormulario();
-                    // finalizarAguardar();
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
-                }
-            })
+                setTimeout(() => {
+                    window.location = "index.html";
+                }, "2000");
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
                 // finalizarAguardar();
@@ -300,6 +406,10 @@ new Cleave('.input-phone', {
     blocks: [0, 2, 5, 4]
 });
 new Cleave('.input-phone1', {
+    delimiters: ['(', ') ', ' - '],
+    blocks: [0, 2, 5, 4]
+});
+new Cleave('.input-phone2', {
     delimiters: ['(', ') ', ' - '],
     blocks: [0, 2, 5, 4]
 });
