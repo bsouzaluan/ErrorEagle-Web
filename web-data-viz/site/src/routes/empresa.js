@@ -21,7 +21,7 @@ router.post("/cadastrar/empresa", function (req, res) {
 router.post("/cadastrar/endereco", function (req, res) {
     empresaController.cadastrarEndereco(req, res);
 })
-router.post("/autenticar/funcionario", function (req, res) {
+router.get("/autenticar/funcionario/:email/:senha", function (req, res) {
     empresaController.entrarFuncionario(req, res);
 });
 router.post("/cadastrar/funcionario", function (req, res) {
