@@ -94,7 +94,7 @@ function cadastrarFuncionario(req, res) {
     } else if (supervisor == null) {
         res.status(400).send("Seu supervisor está undefined!");
     } else {
-        empresaModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, supervisor).then(
+        empresaModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, supervisor).then(
             function (resultado) {
                 res.json(resultado);
             }
@@ -121,6 +121,7 @@ function cadastrarEmpresa(req, res) {
     var telefone = req.body.telefoneServer;
     var telefone1 = req.body.telefoneOptionalServer;
     var email = req.body.dominioServer;
+    var fkEndereco = req.body.fkEnderecoServer;
 
     // Faça as validações dos valores
     if (nomeFuncionario == undefined) {
@@ -135,10 +136,12 @@ function cadastrarEmpresa(req, res) {
         telefone = "";
     } else if (email == undefined) {
         res.status(400).send("O email está undefined!");
+    } else if (fkEndereco == undefined) {
+        res.status(400).send("O endereco está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivoempresaModel.js
-        empresaModel.cadastrarEmpresa(nomeResponsavel, razaoSocial, cnpj, telefone, telefone1, email,)
+        empresaModel.cadastrarEmpresa(nomeResponsavel, razaoSocial, cnpj, telefone, telefone1, email, fkEndereco)
             .then(
                 function (resultado) {
                     res.json(resultado);

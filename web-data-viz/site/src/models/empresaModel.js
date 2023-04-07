@@ -32,19 +32,33 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionari
     console.log("ACESSEI O EMPRESA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarFuncionario():", nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, supervisor);
 
 }
-// Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrar(nome, email, senha) {
+function cadastrarEmpresa(nomeResponsavel, razaoSocial, cnpj, telefone, telefone1, email, fkEndereco) {
+
     console.log("ACESSEI O EMPRESA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
 
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO EMPRESA (name, email, password) VALUES ('${nome}', '${email}', '${senha}');
+    insert into Empresa (nomeResponsavel, razaoSocial, CNPJ, telefone1, telefone2, email, fkEndereco) values 
+    ('${nomeResponsavel}','${razaoSocial}','${cnpj}','${telefone}', ${telefone1}, '${email}', ' ${fkEndereco}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+
+}
+// Coloque os mesmos parâmetros aqui. Vá para a var instrucao
+function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, supervisor) {
+    console.log("ACESSEI O EMPRESA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, supervisor);
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+    insert into Funcionario (email, senha, nome, telefone, fkEmpresa) values 
+    ( ${emailFuncionario}, ${senhaFuncionario} , ${nomeFuncionario} , ${telefoneFuncionario} ,${fkEmpresa});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 module.exports = {
-    cadastrar, entrarFuncionario, listar, cadastrarEndereco, cadastrarFuncionario
+    entrarFuncionario, listar, cadastrarEndereco, cadastrarFuncionario, cadastrarEmpresa
 };

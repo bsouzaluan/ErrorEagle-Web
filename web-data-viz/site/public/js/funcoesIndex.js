@@ -256,11 +256,14 @@ function cadastrarEmpresaFuncionarioResponsavel() {
     var cnpj = inpCNPJ.value;
     var telefone1 = inpTelefone1.value;
     var telefone = inpTelefone.value;
-    var dominioVar = emailFuncionario.match(/@(.*)$/);
+    var dominioVar = emailFuncionario.split('@')[1];;
 
 
     var idEmpresaAtual;
     var idEnderecoAtual;
+
+    var enderecoOk;
+    var empresaOk;
     // emailServer: emailVar,
     // senhaServer: senhaVar,
 
@@ -277,7 +280,7 @@ function cadastrarEmpresaFuncionarioResponsavel() {
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
-                    cepServer: cep,
+                    cepServer: cep.replace(/[^\d]+/g, ''),
                     bairroServer: bairro,
                     ruaServer: rua,
                     numeroServer: numero,
@@ -296,8 +299,11 @@ function cadastrarEmpresaFuncionarioResponsavel() {
                         console.log("ID do endereco adicionado " + idEnderecoAtual)
                         // console.log("ID Adicionado " + idEnderecoAtual)
                     })
+                    enderecoOk = true;
+
 
                 } else {
+                    enderecoOk = false;
                     throw "Houve um erro ao tentar realizar o cadastro do endereço!";
                 }
             })
@@ -305,98 +311,121 @@ function cadastrarEmpresaFuncionarioResponsavel() {
                     console.log(`#ERRO: ${resposta}`);
                     // finalizarAguardar();
                 });
+        }
+
+
+
+        function cadastrarEmpresa(razaoSocial, cnpj, telefone, telefone1, dominioVar, fkEndereco) {
+            fetch("/empresa/cadastrar/empresa", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeFuncionarioResponsavel: nomeFuncionario,
+                    razaoSocialServer: razaoSocial,
+                    cnpjServer: cnpj.replace(/[^\d]+/g, ''),
+                    telefoneServer: telefone.replace(/[^\d]+/g, ''),
+                    telefoneOptionalServer: telefone1.replace(/[^\d]+/g, ''),
+                    dominioServer: dominioVar,
+                    fkEnderecoServer: fkEndereco
+                }),
+            }).then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    resposta.json().then((json) => {
+
+                        idEmpresaAtual = json.id;
+
+
+                    })
+
+                    empresaOk = true;
+                    // cardErro.style.display = "block";
+
+                    //mensagem_erro.innerHTML =
+                    // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    empresaOk = false;
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    // finalizarAguardar();
+                });
+        }
+
+
+        function cadastrarFuncionarioResponsavel(nomeFuncionario, emailVar, senhaVar, telefoneFuncionario, idEmpresaAtual) {
+            fetch("/empresa/cadastrar/funcionario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nomeFuncionarioServer: nomeFuncionario,
+                    emailFuncionarioServer: emailVar,
+                    senhaFuncionarioServer: senhaVar,
+                    telefoneFuncionarioServer: telefoneFuncionario,
+                    empresaFuncionarioServer: idEmpresaAtual
+                }),
+            }).then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    //mensagem_erro.innerHTML =
+                    // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "index.html";
+                    }, "2000");
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    // finalizarAguardar();
+                });
+
+            return false;
 
         }
 
         cadastrarEndereco(cep, bairro, rua, numero, estado, cidade);
-
-        // function cadastrarEmpresa() {
-        //     fetch("/empresa/cadastrar/empresa", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify({
-        //             // crie um atributo que recebe o valor recuperado aqui
-        //             // Agora vá para o arquivo routes/usuario.js
-        //             razaoSocialServer: razaoSocial,
-        //             cnpjServer: cnpj,
-        //             telefoneServer: telefone,
-        //             telefoneOptionalServer: telefone1,
-        //             dominioServer: dominioVar,
-        //             fkEnderecoServer: idEnderecoAtual
-        //         }),
-        //     }).then(function (resposta) {
-        //         console.log("resposta: ", resposta);
-
-        //         if (resposta.ok) {
-
-        //             resposta.json().then((json) => {
-
-        //                 idEmpresaAtual = json.id;
-
-        //             })
-        //             // cardErro.style.display = "block";
-
-        //             //mensagem_erro.innerHTML =
-        //             // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-
-
-        //             // limparFormulario();
-        //             // finalizarAguardar();
-        //         } else {
-        //             throw "Houve um erro ao tentar realizar o cadastro!";
-        //         }
-        //     })
-        //         .catch(function (resposta) {
-        //             console.log(`#ERRO: ${resposta}`);
-        //             // finalizarAguardar();
-        //         });
-        // }
-
-
-        // function cadastrarFuncionarioResponsavel(nomeFuncionario, emailVar, senhaVar, telefoneFuncionario, idEmpresaAtual) {
-        //     fetch("/empresa/cadastrar/funcionario", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify({
-        //             nomeFuncionarioServer: nomeFuncionario,
-        //             emailFuncionarioServer: emailVar,
-        //             senhaFuncionarioServer: senhaVar,
-        //             telefoneFuncionarioServer: telefoneFuncionario,
-        //             empresaFuncionarioServer: idEmpresaAtual
-        //         }),
-        //     }).then(function (resposta) {
-        //         console.log("resposta: ", resposta);
-
-        //         if (resposta.ok) {
-        //             // cardErro.style.display = "block";
-
-        //             //mensagem_erro.innerHTML =
-        //             // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-        //             setTimeout(() => {
-        //                 window.location = "index.html";
-        //             }, "2000");
-
-        //             // limparFormulario();
-        //             // finalizarAguardar();
-        //         } else {
-        //             throw "Houve um erro ao tentar realizar o cadastro!";
-        //         }
-        //     })
-        //         .catch(function (resposta) {
-        //             console.log(`#ERRO: ${resposta}`);
-        //             // finalizarAguardar();
-        //         });
-
-        //     return false;
-
-        // }
-
+        // cadastrarEmpresa(razaoSocial, cnpj, telefone, telefone1, dominioVar, idEnderecoAtual)
+        // cadastrarFuncionarioResponsavel(nomeFuncionario, emailFuncionario, senhaVar, telefoneFuncionario, idEmpresaAtual)
+        if (enderecoOk) {
+            console.log("Cadastrou o endereço")
+            cadastrarEmpresa(razaoSocial, cnpj, telefone, telefone1, dominioVar, idEnderecoAtual)
+            console.log("Chamou a cadastrar empresa")
+            if (empresaOk) {
+                console.log("Cadastrou a empresa")
+                cadastrarFuncionarioResponsavel(nomeFuncionario, emailFuncionario, senhaVar, telefoneFuncionario, idEmpresaAtual)
+                console.log("Chamou a cadastrar Funcionario")
+            } else {
+                console.log("Não cadastrou empres")
+            }
+        } else {
+            console.log("Não Cadastrou o endereço")
+        }
+        console.log(enderecoOk = "Endereço")
+        console.log(empresaOk = "Empresa")
 
     } else {
         console.log("Não entrou no cadastro")
