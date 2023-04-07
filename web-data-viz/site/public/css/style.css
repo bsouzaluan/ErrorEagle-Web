@@ -182,3 +182,12 @@ nav .navbar-nav li a {
 .form-control {
     transition: .5s !important;
 }
+
+.formModal {
+    width: 1200px;
+}
+
+.my-modal-dialog {
+    width: 800px;
+
+}
