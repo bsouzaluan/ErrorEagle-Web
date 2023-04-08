@@ -18,6 +18,7 @@ router.get("/listar/Funcionario", function (req, res) {
 router.post("/cadastrar/empresa", function (req, res) {
     empresaController.cadastrarEmpresa(req, res);
 });
+
 router.post("/cadastrar/endereco", function (req, res) {
     empresaController.cadastrarEndereco(req, res);
 })

@@ -80,7 +80,8 @@ function cadastrarFuncionario(req, res) {
     var senhaFuncionario = req.body.senhaFuncionarioServer;
     var telefoneFuncionario = req.body.telefoneFuncionarioServer;
     var empresaFuncionario = req.body.empresaFuncionarioServer;
-    var supervisor = req.body.supevisorOfFuncionario;
+
+
     if (nomeFuncionario == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else if (emailFuncionario == null) {
@@ -91,10 +92,8 @@ function cadastrarFuncionario(req, res) {
         res.status(400).send("Seu telefoneFuncionario está undefined!");
     } else if (empresaFuncionario == null) {
         res.status(400).send("Sua empresa está undefined!");
-    } else if (supervisor == null) {
-        res.status(400).send("Seu supervisor está undefined!");
     } else {
-        empresaModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, supervisor).then(
+        empresaModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario).then(
             function (resultado) {
                 res.json(resultado);
             }
@@ -115,16 +114,16 @@ function cadastrarFuncionario(req, res) {
 function cadastrarEmpresa(req, res) {
 
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nomeFuncionario = req.body.nomeFuncionarioServer;
+    var nomeResponsavel = req.body.nomeResponsavelServer;
     var razaoSocial = req.body.razaoSocialServer;
-    var cnpj = cnpj = req.body.cnpjServer;
+    var cnpj = req.body.cnpjServer;
     var telefone = req.body.telefoneServer;
     var telefone1 = req.body.telefoneOptionalServer;
     var email = req.body.dominioServer;
     var fkEndereco = req.body.fkEnderecoServer;
 
     // Faça as validações dos valores
-    if (nomeFuncionario == undefined) {
+    if (nomeResponsavel == undefined) {
         res.status(400).send("O nome do responsável está undefined!");
     } else if (razaoSocial == undefined) {
         res.status(400).send("A razão social está undefined!");
@@ -139,7 +138,7 @@ function cadastrarEmpresa(req, res) {
     } else if (fkEndereco == undefined) {
         res.status(400).send("O endereco está undefined!");
     } else {
-
+        console.log(" Requisicao do corpo da empresa:" + req.body)
         // Passe os valores como parâmetro e vá para o arquivoempresaModel.js
         empresaModel.cadastrarEmpresa(nomeResponsavel, razaoSocial, cnpj, telefone, telefone1, email, fkEndereco)
             .then(
@@ -167,7 +166,7 @@ function cadastrarEndereco(req, res) {
     var numero = req.body.numeroServer;
     var estado = req.body.estadoServer;
     var cidade = req.body.cidadeServer;
-    console.log(req.body);
+    // console.log(req.body);
 
     if (cep == undefined) {
         res.status(400).send("O cep está undefined!");
