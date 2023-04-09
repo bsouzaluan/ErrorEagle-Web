@@ -157,7 +157,6 @@ function cadastrarEmpresa(req, res) {
             );
     }
 }
-
 function cadastrarEndereco(req, res) {
 
     var cep = req.body.cepServer;

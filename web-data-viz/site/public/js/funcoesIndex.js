@@ -374,14 +374,14 @@ function cadastrarEmpresa() {
                                         // crie um atributo que recebe o valor recuperado aqui
                                         // Agora vá para o arquivo routes/usuario.js
                                         nomeFuncionarioServer: nomeResponsavel,
-                                        emailFuncionarioServer: emailVar,
+                                        emailFuncionarioServer: emailFuncionario,
                                         senhaFuncionarioServer: senhaVar,
                                         telefoneFuncionarioServer: telefoneFuncionario.replace(/[^\d]+/g, ''),
                                         empresaFuncionarioServer: jsonEmpresa.insertId
                                     })
                                 }).then(function (resposta) {
                                     if (resposta.ok) {
-
+                                        alert("foi" + jsonEmpresa.insertId);
 
                                     } else {
                                         throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -413,27 +413,6 @@ function cadastrarEmpresa() {
             // finalizarAguardar();
         });
     }
-
-
-    setTimeout(() => {
-        inpCep.value = "";
-        inpBairro.value = "";
-        inpRua.value = "";
-        inpNumero.value = "";
-        inpEstado.value = "";
-        inpCidade.value = "";
-        nomeCadastro.value = "";
-        inpEmailCadastro.value = "";
-        inpTelefoneFuncionario.value = "";
-        inpSenhaCadastro.value = "";
-        inpRazaoSocial.value = "";
-        inpCNPJ.value = "";
-        inpTelefone1.value = "";
-        inpTelefone.value = "";
-        emailFuncionario = "";
-    }, 4000);
-
-
 }
 
 function next() {
