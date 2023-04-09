@@ -1,0 +1,120 @@
+body {
+    background-color: #101010 !important;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#navMenu {
+    display: flex;
+    background-color: #121212;
+    justify-content: center;
+    align-items: center;
+    z-index: +1000;
+}
+
+#navMenu .container {
+    display: flex;
+    background-color: #121212;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgNavBar {
+    margin: 20px;
+}
+
+.listaItens {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+.listaItens li {
+    list-style: none;
+    color: white;
+}
+
+.listaItens li a {
+    list-style: none;
+    color: white;
+    margin: 0px 10px;
+}
+
+.container {
+    width: 70vw;
+}
+
+#headerH1 {
+    margin: 50px 0px;
+    background-color: #1E1E1E;
+}
+
+.bgPadrao {
+
+    background-color: #101010 !important;
+
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+#totensFuncionario {
+    width: 45%;
+    height: 200px;
+    background-color: #CB1B29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#panelFuncionario {
+    width: 45%;
+    height: 200px;
+    background-color: #b3b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#relatorioFuncionario {
+    width: 60%;
+    height: 200px;
+    background-color: #b3b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#criarRelatorios {
+    width: 30%;
+    height: 200px;
+    background-color: #CB1B29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#line1 {
+    display: flex;
+    justify-content: center;
+}
+
+#line2 {
+    display: flex;
+    justify-content: center;
+}
+
+#contains {
+    display: flex;
+
+}
