@@ -448,6 +448,7 @@ function next() {
     formCad[0].style = "display:none;"
     formCad[1].style = "display:none;"
     formCad[2].style = "display:block;"
+    formCad[3].style = "display:block;"
 
 
 
@@ -467,6 +468,7 @@ function back() {
     formCad[0].style = "display:block;"
     formCad[1].style = "display:block;"
     formCad[2].style = "display:none;"
+    formCad[3].style = "display:none;"
 
 }
 function cep() {
