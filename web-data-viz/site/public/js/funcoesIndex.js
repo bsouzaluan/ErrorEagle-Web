@@ -77,7 +77,59 @@ function checkCamposCadastroEmpresa() {
         inpEmailCadastro.style = "border: 1px solid #ccc; ";
     }
 
+    // Validando campo "inpCep"
+    var cep = inpCep.value;
+    if (cep === "") {
+        inpCep.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpCep.style = "border: 1px solid #ccc;";
+    }
 
+    // Validando campo "inpBairro"
+    var bairro = inpBairro.value;
+    if (bairro === "") {
+        inpBairro.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpBairro.style = "border: 1px solid #ccc;";
+    }
+
+    // Validando campo "inpRua"
+    var rua = inpRua.value;
+    if (rua === "") {
+        inpRua.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpRua.style = "border: 1px solid #ccc;";
+    }
+
+    // Validando campo "inpNumero"
+    var numero = inpNumero.value;
+    if (numero === "") {
+        inpNumero.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpNumero.style = "border: 1px solid #ccc;";
+    }
+
+    // Validando campo "inpEstado"
+    var estado = inpEstado.value;
+    if (estado === "") {
+        inpEstado.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpEstado.style = "border: 1px solid #ccc;";
+    }
+
+    // Validando campo "inpCidade"
+    var cidade = inpCidade.value;
+    if (cidade === "") {
+        inpCidade.style = "border: 3px solid #ff0000;";
+        hasEmptyFields = true;
+    } else {
+        inpCidade.style = "border: 1px solid #ccc;";
+    }
 
     if (telefoneFuncionario === "") {
         inpTelefoneFuncionario.style = "border: 3px solid #ff0000 ;";
@@ -124,14 +176,7 @@ function checkCamposCadastroEmpresa() {
 }
 
 function limparErros() {
-    nomeVar = nomeCadastro.value;
-    razaoSocial = inpRazaoSocial.value;
-    cnpj = inpCNPJ.value;
-    telefone = inpTelefone.value;
-    telefone1 = inpTelefone1.value;
-    emailVar = inpEmailCadastro.value;
-    senhaVar = inpSenhaCadastro.value;
-    confirmacaoSenhaVar = inpSenhaConfirmacao.value;
+
     const limpar = setTimeout(() => {
         nomeCadastro.style = " border: 1px solid #ccc; "
         inpRazaoSocial.style = " border: 1px solid #ccc; "
@@ -142,6 +187,12 @@ function limparErros() {
         inpEmailCadastro.style = " border: 1px solid #ccc; "
         inpSenhaCadastro.style = " border: 1px solid #ccc; "
         inpSenhaConfirmacao.style = " border: 1px solid #ccc; "
+        inpCep.style = " border: 1px solid #ccc; "
+        inpRua.style = " border: 1px solid #ccc; "
+        inpBairro.style = " border: 1px solid #ccc; "
+        inpNumero.style = " border: 1px solid #ccc; "
+        inpEstado.style = " border: 1px solid #ccc; "
+        inpCidade.style = " border: 1px solid #ccc; "
     }, 5000)
 
 }
@@ -209,9 +260,13 @@ function entrar() {
                         console.log(json);
                         console.log(JSON.stringify(json));
 
-                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.ID_FUNCIONARIO
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_USUARIO = json.id;
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.TELEFONE_USUARIO = json.telefone;
+                        sessionStorage.FK_EMPRESA = json.fkEmpresa;
+                        sessionStorage.FK_SURPERVISOR = json.fkSurpervisor
+
 
                         setTimeout(function () {
 
@@ -237,7 +292,7 @@ function entrar() {
     return false;
 }
 
-function cadastrarEmpresaFuncionarioResponsavel() {
+function cadastrarEmpresa() {
     //aguardar();
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -326,11 +381,11 @@ function cadastrarEmpresaFuncionarioResponsavel() {
                                     })
                                 }).then(function (resposta) {
                                     if (resposta.ok) {
-                                        alert("foi" + jsonEmpresa.insertId);
+
 
                                     } else {
                                         throw ("Houve um erro ao tentar realizar o cadastro!");
-                                        alert("nao foi" + jsonEmpresa.insertId);
+
                                     }
 
                                 }).catch(function (resposta) {
@@ -358,81 +413,103 @@ function cadastrarEmpresaFuncionarioResponsavel() {
             // finalizarAguardar();
         });
     }
+
+
+    setTimeout(() => {
+        inpCep.value = "";
+        inpBairro.value = "";
+        inpRua.value = "";
+        inpNumero.value = "";
+        inpEstado.value = "";
+        inpCidade.value = "";
+        nomeCadastro.value = "";
+        inpEmailCadastro.value = "";
+        inpTelefoneFuncionario.value = "";
+        inpSenhaCadastro.value = "";
+        inpRazaoSocial.value = "";
+        inpCNPJ.value = "";
+        inpTelefone1.value = "";
+        inpTelefone.value = "";
+        emailFuncionario = "";
+    }, 4000);
+
+
 }
 
+function next() {
 
-// resposta.json().then((jsonEmpresa) => {
-//     fetch("/empresa/cadastrar/funcionario", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//             nomeFuncionarioServer: nomeResponsavel,
-//             emailFuncionarioServer: emailVar,
-//             senhaFuncionarioServer: senhaVar,
-//             telefoneFuncionarioServer: telefoneFuncionario,
-//             empresaFuncionarioServer: jsonEmpresa.insertId
-//         }),
-//     }).then(function (resposta) {
-//         console.log("resposta: ", resposta);
-
-//         if (resposta.ok) {
-//             // cardErro.style.display = "block";
-
-//             //mensagem_erro.innerHTML =
-//             // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-//             setTimeout(() => {
-//                 window.location = "index.html";
-//             }, "2000");
-
-//             // limparFormulario();
-//             // finalizarAguardar();
-//         } else {
-//             throw "Houve um erro ao tentar realizar o cadastro!";
-//         }
-//     })
-//         .catch(function (resposta) {
-//             console.log(`#ERRO: ${resposta}`);
-//             // finalizarAguardar();
-//         });
-
-//     return false;
-// })
+    var btnAdvance = document.getElementById("btnAvancar");
+    var btnVoltar = document.getElementById("btnVoltar");
+    var btnCadastrar = document.getElementById("btnCadastrar");
+    var formCad = document.querySelectorAll("#formCadastro");
+    btnAdvance.style = "display:none;";
+    btnCadastrar.style = "display:block;";
+    btnVoltar.style = "display:block;";
+    formCad[0].style = "display:none;"
+    formCad[1].style = "display:none;"
+    formCad[2].style = "display:block;"
 
 
 
 
 
+}
 
+function back() {
 
+    var btnAdvance = document.getElementById("btnAvancar");
+    var btnVoltar = document.getElementById("btnVoltar");
+    var btnCadastrar = document.getElementById("btnCadastrar");
+    var formCad = document.querySelectorAll("#formCadastro");
+    btnAdvance.style = "display:block;";
+    btnCadastrar.style = "display:none;";
+    btnVoltar.style = "display:none;";
+    formCad[0].style = "display:block;"
+    formCad[1].style = "display:block;"
+    formCad[2].style = "display:none;"
 
+}
+function cep() {
+    var cep = inpCep.value;
+    var bairro = inpBairro.value;
+    var rua = inpRua.value;
+    var numero = inpNumero.value;
+    var estado = inpEstado.value;
+    var cidade = inpCidade.value;
 
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
 
+    if (cep.length == 9) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.logradouro != null) {
+                    inpRua.value = data.logradouro;
+                }
 
-// fetch("empresa/cadastrar/endereco", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//         // crie um atributo que recebe o valor recuperado aqui
-//         // Agora vá para o arquivo routes/usuario.js
+                if (data.bairro != null) {
+                    inpBairro.value = data.bairro;
+                }
 
-//     }),
-// }).then(function (resposta) {
-//     console.log("resposta: ", resposta);
-//     if (resposta.ok) {
-//         resposta.json().then((json) => {
-//             console.log(JSON.stringify(json));
-//             idEnderecoAtual = json.insertId;
-//             console.log("ID do endereco adicionado " + idEnderecoAtual)
-//             // console.log("ID Adicionado " + idEnderecoAtual)
+                if (data.localidade != null) {
+                    inpCidade.value = data.localidade;
+                }
 
-//         })
-//         // enderecoOk = true;
+                if (data.uf != null) {
+                    inpEstado.value = data.uf;
+                }
 
+            })
+            .catch(error => console.error('Erro ao obter informações do CEP', error));
+    } else {
+        Swal.fire({
+            title: 'Cep Invalido',
+            icon: 'error',
+            confirmButtonText: 'Continuar'
+        })
+    }
+
+}
 
 
 
@@ -476,6 +553,11 @@ function cadastrarEmpresaFuncionarioResponsavel() {
 
 //Mask Test
 //CleaverJS lib de masks
+new Cleave('.cep-input', {
+    delimiters: ['-'],
+    blocks: [5, 3],
+    numericOnly: true
+});
 new Cleave('.input-phone', {
     delimiters: ['(', ') ', ' - '],
     blocks: [0, 2, 5, 4]
