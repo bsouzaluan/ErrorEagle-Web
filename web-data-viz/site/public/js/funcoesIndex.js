@@ -56,12 +56,12 @@ function checkCamposCadastroEmpresa() {
         inpTelefone1.style = "border: 1px solid #ccc; ";
     }
 
-    if (telefone === "") {
-        inpTelefone.style = "border: 3px solid #ff0000 ;";
-        hasEmptyFields = true;
-    } else {
-        inpTelefone.style = "border: 1px solid #ccc; ";
-    }
+    // if (telefone === "") {
+    //     inpTelefone.style = "border: 3px solid #ff0000 ;";
+    //     hasEmptyFields = true;
+    // } else {
+    //     inpTelefone.style = "border: 1px solid #ccc; ";
+    // }
 
     if (nomeFuncionario === "") {
         nomeCadastro.style = "border: 3px solid #ff0000 ;";
