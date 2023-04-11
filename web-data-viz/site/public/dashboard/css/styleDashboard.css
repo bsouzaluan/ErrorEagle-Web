@@ -1,0 +1,77 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #101010 !important;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#navMenu {
+    display: flex;
+    background-color: #121212;
+    justify-content: center;
+    align-items: center;
+    z-index: +1000;
+}
+
+#navMenu .container {
+    display: flex;
+    background-color: #121212;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgNavBar {
+    margin: 20px;
+}
+
+.listaItens {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+.listaItens li {
+    list-style: none;
+    color: white;
+}
+
+.listaItens li a {
+    list-style: none;
+    color: white;
+    margin: 0px 10px;
+}
+
+main {
+    height: 100vh;
+}
+
+.alert {
+    background-color: red;
+    border-radius: 1000px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 9px 14px;
+}
+
+h3 {
+    margin: 0px;
+    font-weight: bold;
+}
+
+.card-infos {
+    height: 20%;
+    border-top: 1px solid rgb(37, 37, 37);
+}
+
+#caixa-maior {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
