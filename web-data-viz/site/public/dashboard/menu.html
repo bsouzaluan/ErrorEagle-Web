@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ErrorEagle | Menu</title>
+
+
+    <link rel="icon" href="./assets/icon/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styleMenu.css" />
+    <script src="../js/funcoes.js"></script>
+
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body onload="validarSessao()">
+
+    <header>
+        <nav id="navMenu">
+            <div class="container"><a href="../index.html" class="imgNavBar"><img src="../assets/icon/logo.svg"
+                        alt=""></a>
+                <ul class="listaItens">
+
+                    <li><a onclick="limparSessao()">Sair</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <main class=" bgPadrao ">
+
+        <div class="container ">
+            <div id="headerH1">
+                <h1 class="text-center text-light  py-5">Menu</h1>
+            </div>
+            <div id="menu">
+                <div id="line1">
+                    <div id="totensFuncionario">
+                        <h2>Totens</h2>
+                    </div>
+                    <div id="panelFuncionario">
+                        <h2>Funcionarios</h2>
+                    </div>
+
+                </div>
+                <div id="line2">
+                    <div id="relatorioFuncionario">
+                        <h2>Relatorios</h2>
+                    </div>
+                    <div id="criarRelatorios">
+                        <h2>Criar relatorios</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <footer></footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+    integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/addons/cleave-phone.br.js"
+    integrity="sha512-5s5PrEH+KcfrS+Yx68NHOOS4J6wHfn2+f/p2UFONTn7+0f5pcNVsU8FD1IfsrCywo7g/HvCBNrcAPv1EcsDu7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+
+</html>
