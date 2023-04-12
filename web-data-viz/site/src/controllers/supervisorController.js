@@ -22,10 +22,10 @@ function cadastrarFuncionario(req, res) {
     } else if (empresaFuncionario == null) {
         res.status(400).send("Sua empresa está undefined!");
     } else if (fkSupervisor == null) {
-    res.status(400).send("ID resposável está undefined!");
+        res.status(400).send("ID resposável está undefined!");
     }
     else {
-        empresaModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario).then(
+        supervisorModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, fkSupervisor).then(
             function (resultado) {
                 res.json(resultado);
             }
@@ -44,6 +44,30 @@ function cadastrarFuncionario(req, res) {
 
 }
 
+function deletarUsuario(req, res) {
+    var idFuncionario = req.body.idFuncionarioServer;
+
+    if (idFuncionario == undefined) {
+        res.status(400).send("Seu idFuncionario está undefined!");
+
+    } else {
+        supervisorModel.deletarUsuario(idFuncionario).then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+    }
+}
 module.exports = {
     cadastrarFuncionario,
+    deletarUsuario
 }

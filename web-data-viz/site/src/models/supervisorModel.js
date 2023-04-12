@@ -13,6 +13,15 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionari
     return database.executar(instrucao);
 }
 
+function deletarUsuario(idFuncionario) {
+
+var instrucao = `update funcionario SET statusFuncionario = 0 where idFuncionario = ${idFuncionario}`
+
+
+    return database.executar(instrucao);
+}
+
 module.exports = {
-   cadastrarFuncionario
+   cadastrarFuncionario,
+   deletarUsuario
 };
