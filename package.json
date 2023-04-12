@@ -1,7 +1,10 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.2.3",
-    "popper.js": "^1.16.1",
-    "sass": "^1.60.0"
+    "name": "site",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "start": "node ./site/app.js",
+      "dev": "cd site && npm run dev",
+      "postinstall": "cd site && npm install"
+    }
   }
-}
