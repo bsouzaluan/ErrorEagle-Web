@@ -12,7 +12,7 @@ function listar() {
 function entrarFuncionario(email, senha) {
     console.log("ACESSEI O Empresas MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucao = `
-    select f.email, f.senha
+    select f.idFuncionario, f.nome, f.email, f.senha, f.telefone, f.fkEmpresa, f.fkSupervisor
 		from Funcionario as f WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);

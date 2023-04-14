@@ -259,14 +259,14 @@ function entrar() {
                     resposta.json().then((json) => {
                         console.log(json);
                         console.log(JSON.stringify(json));
+                        console.log(json);
 
-                        sessionStorage.ID_FUNCIONARIO
+                        sessionStorage.ID_FUNCIONARIO = json.idFuncionario;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.TELEFONE_USUARIO = json.telefone;
                         sessionStorage.FK_EMPRESA = json.fkEmpresa;
                         sessionStorage.FK_SURPERVISOR = json.fkSurpervisor
-
 
                         setTimeout(function () {
 
