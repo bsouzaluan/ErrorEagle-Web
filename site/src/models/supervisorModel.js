@@ -15,13 +15,22 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionari
 
 function deletarUsuario(idFuncionario) {
 
-var instrucao = `update funcionario SET statusFuncionario = 0 where idFuncionario = ${idFuncionario}`
+    var instrucao = `update funcionario SET statusFuncionario = 0 where idFuncionario = ${idFuncionario}`
 
 
     return database.executar(instrucao);
 }
 
+function listarFuncionarios(idEmpresa) {
+    console.log(idEmpresa)
+    var instrucao = `SELECT idFuncionario, nome, email, senha, telefone, fkEmpresa, fkSupervisor
+    FROM ErrorEagle.Funcionario where fkEmpresa = ${idEmpresa};
+    `
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
-   cadastrarFuncionario,
-   deletarUsuario
+    cadastrarFuncionario,
+    deletarUsuario, listarFuncionarios
 };

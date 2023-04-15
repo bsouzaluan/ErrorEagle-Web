@@ -47,7 +47,7 @@ function validarSessao() {
                 }
             })
 
-            console.log("Disconnectado")
+
             Toast.fire({
                 icon: 'error',
                 title: 'Você esta sendo disconectado'

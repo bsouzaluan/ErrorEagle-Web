@@ -234,7 +234,6 @@ function validarLogin() {
     return true; // retorna verdadeiro se não há campos vazios
 }
 
-
 function entrar() {
 
     // aguardar();
