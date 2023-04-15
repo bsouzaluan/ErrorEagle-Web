@@ -13,14 +13,25 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleMenu.css" />
     <link rel="stylesheet" href="css/styleSideBar.css">
+    <link rel="stylesheet" href="css/styleColaboradores.css">
     <script src="../js/funcoes.js"></script>
 </head>
 
 
 <body onload="validarSessao()">
-    <div class="sideBar d-flex align-items-center ">
+    <header>
+        <nav id="navMenu">
+            <div class="container d-flex justify-content-center">
+                <a href="../index.html" class="imgNavBar"><img src="../assets/icon/logo.svg" alt=""></a>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="sideBar d-flex align-items-center h-100 ">
         <div class="container d-flex flex-column align-items-center justify-content-center">
-            <span id="nome"> Nome: <span id="nomeSideBar"></span></span>
+            <span id="nome"><span id="nomeSideBar"></span></span>
             <a href="menu.html">menu</a>
             <a href="maquinas.html">maquinas</a>
             <a href="relatorios.html">relatorios</a>
@@ -28,22 +39,19 @@
             <a onclick="limparSessao()" class="btnSair">Sair</a>
         </div>
     </div>
-    <header>
-        <nav id="navMenu">
-            <div class="container"><a href="../index.html" class="imgNavBar"><img src="../assets/icon/logo.svg"
-                        alt=""></a>
-                <ul class="listaItens">
-
-                    <li><a onclick="limparSessao()" class="btnSair">Sair</a></li>
-                </ul>
+    <main class="container d-flex flex-column justify-content-start ">
+        <div id="headerH1" class="tituloPagina">
+            <h1 class="text-center text-light py-5 ">Colaboradores</h1>
+        </div>
+        <div>
+            <h2 class="text-light">Ativos</h2>
+            <div id="listaAtivosDiv">
             </div>
-
-        </nav>
-    </header>
-    <main class="container">
-
-        <div id="listaItens">
-            <div></div>
+        </div>
+        <div>
+            <h2 class="text-light">Inativos</h2>
+            <div id="listaInativosDiv">
+            </div>
         </div>
     </main>
 
@@ -51,7 +59,7 @@
 
 
 </html>
-<script src="js/sidebar"></script>
+<script src="js/sidebar.js"></script>
 <script src="../js/listarFuncionarios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
