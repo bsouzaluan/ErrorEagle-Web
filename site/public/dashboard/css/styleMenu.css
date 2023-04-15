@@ -8,15 +8,19 @@ main {
     height: 100vh;
 }
 
+header {
+    background-color: #121212;
+}
+
 #navMenu {
     width: 100vw;
     display: flex;
     background-color: #121212;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: relative;
     top: 0;
-    z-index: +1000;
+    z-index: +100;
 }
 
 #navMenu .container {
@@ -24,6 +28,7 @@ main {
     background-color: #121212;
     justify-content: space-between;
     align-items: center;
+    z-index: +101;
 }
 
 .imgNavBar {
@@ -75,6 +80,16 @@ main {
     width: 45%;
     height: 200px;
     background-color: #CB1B29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#panelDashboard {
+    width: 95%;
+    height: 200px;
+    background-color: #b3b3b3;
     display: flex;
     justify-content: center;
     align-items: center;

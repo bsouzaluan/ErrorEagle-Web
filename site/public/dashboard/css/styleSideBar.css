@@ -23,11 +23,15 @@
 }
 
 #nome {
+    overflow-y: hidden;
+    width: 300px;
+
     color: white;
     padding: 20px 3px 20px 0px;
 }
 
 #nomeSideBar {
+
     font-size: 20px;
     color: white;
 }
