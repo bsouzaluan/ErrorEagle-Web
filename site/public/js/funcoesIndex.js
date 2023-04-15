@@ -266,6 +266,7 @@ function entrar() {
                         sessionStorage.TELEFONE_USUARIO = json.telefone;
                         sessionStorage.FK_EMPRESA = json.fkEmpresa;
                         sessionStorage.FK_SURPERVISOR = json.fkSurpervisor
+                        sessionStorage.SENHA_USUARIO = json.senha;
 
                         setTimeout(function () {
 
