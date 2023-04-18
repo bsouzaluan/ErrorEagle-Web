@@ -116,36 +116,78 @@ async function deleteFuncionario(idFuncionario) {
         }
     })
 
-    if (password == sessionStorage.SENHA_USUARIO) {
-        fetch(`/gerenciadorUsuario/deletar/funcionario/${idFuncionario}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then(function (resposta) {
-                console.log("ESTOU NO THEN DO listar()!");
+    var emailVar = sessionStorage.EMAIL_USUARIO;
+    var senhaVar = password;
 
-                if (resposta.ok) {
-                    resposta.json().then((json) => {
-                        limparLista()
-                        listarFuncionarios()
-                        listarFuncionariosInativos()
-                    });
-                } else {
-                    console.log("Houve um erro ao tentar Lista");
-                    resposta.text().then((texto) => {
-                        console.error(texto);
-                    });
-                }
-            })
-            .catch(function (erro) {
-                console.log(erro);
-            });
-        Swal.fire(`Usuario selecionado não possue mais acesso`)
-    } else {
-        Swal.fire(`Senha Invalida`)
-    }
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+    fetch(`empresa/autenticar/funcionario/${emailVar}/${senhaVar}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then((json) => {
+                    console.log(JSON.stringify(json));
+
+                    if (password == json.senha) {
+                        fetch(`/gerenciadorUsuario/deletar/funcionario/${idFuncionario}`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                            .then(function (resposta) {
+                                console.log("ESTOU NO THEN DO listar()!");
+
+                                if (resposta.ok) {
+                                    resposta.json().then((json) => {
+                                        limparLista()
+                                        listarFuncionarios()
+                                        listarFuncionariosInativos()
+                                    });
+                                } else {
+                                    console.log("Houve um erro ao tentar Lista");
+                                    resposta.text().then((texto) => {
+                                        console.error(texto);
+                                    });
+                                }
+                            })
+                            .catch(function (erro) {
+                                console.log(erro);
+                            });
+                        Swal.fire(`Usuario selecionado não possue mais acesso`)
+                    } else {
+                        Swal.fire(`Senha Invalida`)
+                    }
+
+                    sessionStorage.SENHA_USUARIO = json.senha;
+
+                });
+            } else {
+                console.log("Houve um erro ao tentar validar senha");
+
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                    //finalizarAguardar(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+
+    return false;
+
+
+
 
 
 

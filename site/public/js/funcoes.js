@@ -1,15 +1,12 @@
-// sessão
 function validarSessao() {
     // aguardar();
-
     var i = 0;
-
     setInterval(() => {
         var email = sessionStorage.EMAIL_USUARIO;
         var nome = sessionStorage.NOME_USUARIO;
         var b_usuario = document.getElementById("b_usuario");
         console.log("Esta rodando")
-        if ((email != undefined || email != null) && (nome != null || nome != undefined)) {
+        if (email != undefined && nome != undefine) {
             // window.alert(`Seja bem-vindo, ${nome}!`);
 
             const Toast = Swal.mixin({
@@ -32,7 +29,6 @@ function validarSessao() {
                 console.log("logado");
                 i++;
             }
-
             // finalizarAguardar();
         } else {
             const Toast = Swal.mixin({
@@ -55,12 +51,13 @@ function validarSessao() {
             sessionStorage.clear();
             window.location = "../index.html";
         }
-    }, 1000);
+    }, 2000);
 
 }
 
 
 function limparSessao() {
+    console.log("Limpei")
     // aguardar();
     sessionStorage.clear();
     // finalizarAguardar();
