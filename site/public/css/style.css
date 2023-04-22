@@ -191,3 +191,9 @@ nav .navbar-nav li a {
     width: 800px;
 
 }
+
+
+.btnChangeModal {
+    border: 0px;
+    background-color: #12121200;
+}

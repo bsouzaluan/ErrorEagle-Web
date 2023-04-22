@@ -5,14 +5,22 @@ body {
 main {
     display: flex;
     flex-direction: row;
+    height: 100vh;
+}
+
+header {
+    background-color: #121212;
 }
 
 #navMenu {
+    width: 100vw;
     display: flex;
     background-color: #121212;
     justify-content: center;
     align-items: center;
-    z-index: +1000;
+    position: relative;
+    top: 0;
+    z-index: +100;
 }
 
 #navMenu .container {
@@ -20,6 +28,7 @@ main {
     background-color: #121212;
     justify-content: space-between;
     align-items: center;
+    z-index: +101;
 }
 
 .imgNavBar {
@@ -56,7 +65,12 @@ main {
 
 }
 
+.btnSair {
+    cursor: pointer;
+}
+
 #menu {
+
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -66,6 +80,16 @@ main {
     width: 45%;
     height: 200px;
     background-color: #CB1B29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#panelDashboard {
+    width: 95%;
+    height: 200px;
+    background-color: #b3b3b3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,6 +134,7 @@ main {
 #line2 {
     display: flex;
     justify-content: center;
+    margin: 0px 0px 60px 0px;
 }
 
 #contains {

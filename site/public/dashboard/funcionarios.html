@@ -2,13 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>ErrorEagle | Menu</title>
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funcionarios</title>
     <link rel="icon" href="./assets/icon/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -16,15 +13,12 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleMenu.css" />
     <link rel="stylesheet" href="css/styleSideBar.css">
+    <link rel="stylesheet" href="css/styleColaboradores.css">
     <script src="../js/funcoes.js"></script>
-
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
 </head>
 
-<body onload="validarSessao()">
 
+<body onload="validarSessao()">
     <header>
         <nav id="navMenu">
             <div class="container d-flex justify-content-center">
@@ -34,57 +28,39 @@
 
         </nav>
     </header>
-    <main class=" bgPadrao  ">
-        <div class="sideBar d-flex align-items-center h-100 ">
-            <div class="container d-flex flex-column align-items-center justify-content-center">
-                <span id="nome"> Nome: <span id="nomeSideBar"></span></span>
-                <a href="menu.html">menu</a>
-                <a href="maquinas.html">maquinas</a>
-                <a href="relatorios.html">relatorios</a>
-                <a href="funcionarios.html">colaboradores</a>
-                <a onclick="limparSessao()" class="btnSair">Sair</a>
+
+    <div class="sideBar d-flex align-items-center h-100 ">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+            <span id="nome"><span id="nomeSideBar"></span></span>
+            <a href="menu.html">menu</a>
+            <a href="maquinas.html">maquinas</a>
+            <a href="relatorios.html">relatorios</a>
+            <a href="funcionarios.html">colaboradores</a>
+            <a onclick="limparSessao()" class="btnSair">Sair</a>
+        </div>
+    </div>
+    <main class="container d-flex flex-column justify-content-start ">
+        <div id="headerH1" class="tituloPagina">
+            <h1 class="text-center text-light py-5 ">Colaboradores</h1>
+        </div>
+        <div>
+            <h2 class="text-light">Ativos</h2>
+            <div id="listaAtivosDiv">
             </div>
         </div>
-        <div class="container d-flex flex-column justify-content-start">
-            <div id="headerH1">
-                <h1 class="text-center text-light py-5 ">Menu</h1>
-            </div>
-            <div id="menu">
-                <div id="line1">
-                    <a href="dashboard.html" id="panelDashboard" onclick="funcionario()">
-                        <h2>Dashboard</h2>
-                    </a>
-
-                </div>
-                <div id="line1">
-                    <a href="" id="totensFuncionario">
-                        <h2>Totens</h2>
-                    </a>
-                    <a href="funcionarios.html" id="panelFuncionario" onclick="funcionario()">
-                        <h2>Funcionarios</h2>
-                    </a>
-
-                </div>
-                <div id="line2">
-                    <a id="relatorioFuncionario">
-                        <h2>Relatorios</h2>
-                    </a>
-                    <a id="criarRelatorios">
-                        <h2>Criar relatorios</h2>
-                    </a>
-                </div>
-
+        <div>
+            <h2 class="text-light">Inativos</h2>
+            <div id="listaInativosDiv">
             </div>
         </div>
-
     </main>
-
 
 </body>
 
+
 </html>
 <script src="js/sidebar.js"></script>
-<script src="js/menu.js"></script>
+<script src="../js/listarFuncionarios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
     integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="

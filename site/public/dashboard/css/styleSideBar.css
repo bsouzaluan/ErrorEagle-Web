@@ -1,0 +1,55 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sideBar {
+
+    position: fixed;
+    top: 0px;
+    width: 20px;
+    height: 100vh;
+    background-color: #121212;
+    box-shadow: rgba(255, 255, 255, 0.589) 1.95px 1.95px 2.6px;
+    transition: width 0.5s ease-in-out;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: width 0.5s ease-in-out;
+
+}
+
+.sideBar:hover {
+    width:
+        400px;
+}
+
+#nome {
+    overflow-y: hidden;
+    width: 300px;
+
+    color: white;
+    padding: 20px 3px 20px 0px;
+}
+
+#nomeSideBar {
+
+    font-size: 20px;
+    color: white;
+}
+
+.sideBar a {
+    text-align: center;
+    width: 170px;
+    padding: 10px 0px;
+    background-color: #CB1B29;
+    color: white;
+    margin: 10px 0px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .3s;
+
+}
+
+.sideBar a:hover {
+    background-color: #83121b;
+}

@@ -17,6 +17,8 @@ main {
     display: flex;
     background-color: #121212;
     justify-content: center;
+    position: relative;
+    top: 0;
     align-items: center;
     z-index: +1000;
 }
@@ -69,9 +71,11 @@ h3 {
 
 .card-infos {
     height: 20%;
-    border-top: 1px solid rgb(37, 37, 37);
+    border-top: 3px solid #4e4e4e;
 }
 
 #caixa-maior {
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: rgba(10, 9, 9, 0.2) 0px 2px 8px 0px;
+    background-color: #332F2E;
+    border-radius: 7px;
 }

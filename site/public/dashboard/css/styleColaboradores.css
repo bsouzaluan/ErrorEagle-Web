@@ -1,0 +1,52 @@
+body {
+    overflow-y: hidden;
+
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(49, 49, 49);
+    padding: 5px 0px;
+    margin: 10px 0px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 6px;
+}
+
+.nomeItemLista {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    text-align: left;
+
+
+}
+
+.emailItemLista {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+    text-align: left;
+}
+
+.telefoneItemLista {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+    text-align: left;
+
+}
+
+.btnDelete {
+    background-color: rgba(255, 0, 0, 0);
+    border: 0px;
+    color: rgb(255, 112, 112);
+    border-radius: 6px;
+    padding: 2px 5px;
+}

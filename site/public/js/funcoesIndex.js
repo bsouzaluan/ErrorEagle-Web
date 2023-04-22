@@ -234,7 +234,6 @@ function validarLogin() {
     return true; // retorna verdadeiro se não há campos vazios
 }
 
-
 function entrar() {
 
     // aguardar();
@@ -259,17 +258,17 @@ function entrar() {
                     resposta.json().then((json) => {
                         console.log(json);
                         console.log(JSON.stringify(json));
+                        console.log(json);
 
-                        sessionStorage.ID_FUNCIONARIO
+                        sessionStorage.ID_FUNCIONARIO = json.idFuncionario;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.TELEFONE_USUARIO = json.telefone;
                         sessionStorage.FK_EMPRESA = json.fkEmpresa;
                         sessionStorage.FK_SURPERVISOR = json.fkSurpervisor
-
-
+                        sessionStorage.SENHA_USUARIO = json.senha;
+                        fecharModal("#modalLoginForm");
                         setTimeout(function () {
-
                             window.location = "./dashboard/menu.html";
                         }, 1000); // apenas para exibir o loading
                     });
@@ -382,6 +381,7 @@ function cadastrarEmpresa() {
                                 }).then(function (resposta) {
                                     if (resposta.ok) {
                                         alert("foi" + jsonEmpresa.insertId);
+                                        fecharModal
 
                                     } else {
                                         throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -492,45 +492,15 @@ function cep() {
 
 }
 
+function fecharModal(modal) {
 
+    $(`${modal}`).modal('hide');
+}
+function abrirModal(modal) {
 
+    $(`${modal}`).modal('show');
+}
 
-
-
-
-
-
-
-
-// cadastrarEndereco(cep, bairro, rua, numero, estado, cidade);
-//     // cadastrarEmpresa(razaoSocial, cnpj, telefone, telefone1, dominioVar, idEnderecoAtual)
-//     // cadastrarFuncionarioResponsavel(nomeFuncionario, emailFuncionario, senhaVar, telefoneFuncionario, idEmpresaAtual)
-//     if (enderecoOk) {
-//         console.log("Cadastrou o endereço")
-//         cadastrarEmpresa(razaoSocial, cnpj, telefone, telefone1, dominioVar, idEnderecoAtual)
-//         console.log("Chamou a cadastrar empresa")
-//         if (empresaOk) {
-//             console.log("Cadastrou a empresa")
-//             cadastrarFuncionarioResponsavel(nomeFuncionario, emailFuncionario, senhaVar, telefoneFuncionario, idEmpresaAtual)
-//             console.log("Chamou a cadastrar Funcionario")
-//         } else {
-//             console.log("Não cadastrou empres")
-//         }
-//     } else {
-//         console.log("Não Cadastrou o endereço")
-//     }
-//     console.log(enderecoOk = "Endereço")
-//     console.log(empresaOk = "Empresa")
-
-// } else {
-//     console.log("Não entrou no cadastro")
-// }
-
-// Enviando o valor da nova input
-
-
-
-// btnSairShow();
 
 //Mask Test
 //CleaverJS lib de masks
@@ -557,3 +527,13 @@ new Cleave('.cnpjMask', {
     blocks: [2, 3, 3, 4, 2],
 
 });
+
+function abrirCadastro(login, cadastro) {
+    fecharModal(login);
+    abrirModal(cadastro);
+}
+
+function abrirLogin(login, cadastro) {
+    fecharModal(cadastro);
+    abrirModal(login);
+}

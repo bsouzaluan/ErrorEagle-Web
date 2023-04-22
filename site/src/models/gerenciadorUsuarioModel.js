@@ -15,13 +15,33 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionari
 
 function deletarUsuario(idFuncionario) {
 
-var instrucao = `update funcionario SET statusFuncionario = 0 where idFuncionario = ${idFuncionario}`
+    var instrucao = `update Funcionario SET statusFuncionario = 0 where idFuncionario = ${idFuncionario}`
 
 
     return database.executar(instrucao);
 }
 
+function listarFuncionarios(idEmpresa) {
+    console.log(idEmpresa)
+    var instrucao = `SELECT idFuncionario, nome, email, telefone, fkEmpresa, fkSupervisor, statusFuncionario
+    FROM ErrorEagle.Funcionario 
+    WHERE fkEmpresa = ${idEmpresa} AND statusFuncionario = 1;
+    `
+    return database.executar(instrucao);
+}
+
+function listarFuncionariosInativos(idEmpresa) {
+    console.log(idEmpresa)
+    var instrucao = `SELECT idFuncionario, nome, email,telefone, fkEmpresa, fkSupervisor, statusFuncionario
+    FROM ErrorEagle.Funcionario 
+    WHERE fkEmpresa = ${idEmpresa} AND statusFuncionario = 0;
+    `
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
-   cadastrarFuncionario,
-   deletarUsuario
+    cadastrarFuncionario,
+    deletarUsuario, listarFuncionarios
+    , listarFuncionariosInativos
 };

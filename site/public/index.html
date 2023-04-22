@@ -25,7 +25,7 @@
 <body>
   <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog my-modal-dialog d-flex justify-content-center align-items-center h-100" role="document">
       <div class="modal-content ">
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-weight-bold">Login</h4>
@@ -47,8 +47,11 @@
             <input type="password" id="inpSenhaLogin" class="form-control validate" required>
           </div>
 
+
         </div>
-        <div class="modal-footer d-flex justify-content-center">
+        <div class="modal-footer d-flex justify-content-center flex-column">
+          <button class="btnChangeModal" onclick="abrirCadastro('#modalLoginForm','#modalRegisterForm')">Não possui uma
+            conta?</button>
           <button class="btn btn-default" onclick="entrar()">Login</button>
         </div>
       </div>
@@ -99,7 +102,6 @@
               <i class="fas fa-user prefix grey-text"></i>
               <label data-error="wrong" data-success="right" for="nomeCadastro">Nome Responsavel*</label>
               <input type="text" id="nomeCadastro" class="form-control validate" required>
-
             </div>
 
             <div class="md-form mb-2">
@@ -171,6 +173,8 @@
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-right ">
+          <button class="btnChangeModal" onclick="abrirLogin('#modalLoginForm','#modalRegisterForm')">Já possui uma
+            conta?</button>
           <button class=" text-light btn btn-deep-orange bg-primary" id="btnAvancar" onclick="next()">Avançar</button>
           <button class=" text-light btn btn-deep-orange bg-primary" id="btnVoltar" style="display: none;"
             onclick="back()">Voltar</button>
@@ -181,7 +185,7 @@
     </div>
   </div>
 
-  
+
   <nav class=" navbar navbar-expand-lg navbar-dark header ">
     <div class="container-xl d-flex  ">
       <a class="navbar-brand" href="index.html">
