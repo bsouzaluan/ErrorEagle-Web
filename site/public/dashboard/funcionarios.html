@@ -40,8 +40,76 @@
         </div>
     </div>
     <main class="container d-flex flex-column justify-content-start ">
+
         <div id="headerH1" class="tituloPagina">
             <h1 class="text-center text-light py-5 ">Colaboradores</h1>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog my-modal-dialog d-flex justify-content-center align-items-center h-100  "
+                    role="document">
+                    <div class="modal-content formModal">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Cadastrar Funcionarios</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- onmouseenter="limparErros()" -->
+                        <div class="modal-body mx-3 d-flex justify-content-center">
+
+                            <div class="mx-4 w-100" id="formCadastro">
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="nomeCadastro">Nome
+                                        Funcionario</label>
+                                    <input type="text" id="nomeCadastro" class="form-control validate" required>
+                                </div>
+
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="inpEmailCadastro">Email
+                                        *</label>
+                                    <input type="email" id="inpEmailCadastro" class="form-control validate"
+                                        placeholder="seunome@email.com" required>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="inpTelefoneFuncionario">Telefone
+                                    </label>
+                                    <input type="tel" id="inpTelefoneFuncionario"
+                                        class=" input-phone4 form-control validate" placeholder="(99) 99999-9999"
+                                        required>
+                                </div>
+
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="inpSenhaCadastro">Senha
+                                        *</label>
+                                    <input type="password" id="inpSenhaCadastro" class="form-control validate" required>
+
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="inpSenhaConfirmacao">Confirme a
+                                        senha *</label>
+                                    <input type="password" id="inpSenhaConfirmacao" class="form-control validate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-right ">
+                            <button class=" text-light btn btn-deep-orange bg-primary" id="btnVoltar"
+                                style="display: none;" onclick="back()">Voltar</button>
+                            <button class="btn btn-deep-orange bg-success text-light" onclick="cadastrarFuncionario()"
+                                id="btnCadastrar">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-link navLinkHeader text-center bg-cadastrar-funcionario text-white w-50" data-toggle="modal"
+                data-target="#modalRegisterForm" href="#">+ adicionar funcionario</a>
         </div>
         <div>
             <h2 class="text-light">Ativos</h2>
@@ -59,8 +127,9 @@
 
 
 </html>
+
 <script src="js/sidebar.js"></script>
-<script src="../js/listarFuncionarios.js"></script>
+<script src="../js/funcionarios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
     integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
@@ -68,6 +137,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/addons/cleave-phone.br.js"
     integrity="sha512-5s5PrEH+KcfrS+Yx68NHOOS4J6wHfn2+f/p2UFONTn7+0f5pcNVsU8FD1IfsrCywo7g/HvCBNrcAPv1EcsDu7Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    new Cleave('.input-phone4', {
+        delimiters: ['(', ') ', ' - '],
+        blocks: [0, 2, 5, 4]
+    });
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

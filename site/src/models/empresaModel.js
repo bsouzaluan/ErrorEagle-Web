@@ -49,13 +49,28 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, senhaFuncionari
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    insert into Funcionario (email, senha, nome, telefone, fkEmpresa) values 
-    ( '${emailFuncionario}', '${senhaFuncionario}' , '${nomeFuncionario}' , '${telefoneFuncionario}' ,${empresaFuncionario});
+    insert into Funcionario (email, senha, nome, telefone, fkEmpresa, statusFuncionario) values 
+    ( '${emailFuncionario}', '${senhaFuncionario}' , '${nomeFuncionario}' , '${telefoneFuncionario}' ,${empresaFuncionario},1);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+
+function cadastrarFuncionarioSistema(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, supervisor) {
+    console.log("ACESSEI O EMPRESA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarEmpresa():", nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario);
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+
+    var instrucao = `
+    insert into Funcionario (email, senha, nome, telefone, fkEmpresa,fkSupervisor, statusFuncionario) values 
+    ( '${emailFuncionario}', '${senhaFuncionario}' , '${nomeFuncionario}' , '${telefoneFuncionario}' ,${empresaFuncionario},'${supervisor}',1);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 module.exports = {
-    entrarFuncionario, listar, cadastrarEndereco, cadastrarFuncionario, cadastrarEmpresa
+    entrarFuncionario, listar, cadastrarEndereco, cadastrarFuncionario, cadastrarEmpresa, cadastrarFuncionarioSistema
 };

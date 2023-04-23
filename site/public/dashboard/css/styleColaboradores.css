@@ -50,3 +50,33 @@ body {
     border-radius: 6px;
     padding: 2px 5px;
 }
+
+.form-control {
+    transition: .5s !important;
+}
+
+.formModal {
+    width: 600px;
+}
+
+.my-modal-dialog {
+    width: 500px;
+
+}
+
+
+.btnChangeModal {
+    border: 0px;
+    background-color: #12121200;
+}
+
+.bg-cadastrar-funcionario {
+    font-weight: bolder;
+    border-radius: 6px;
+    background-color: #CB1B29;
+}
+
+.bg-cadastrar-funcionario:hover {
+    border-radius: 6px;
+    background-color: #83121B;
+}
