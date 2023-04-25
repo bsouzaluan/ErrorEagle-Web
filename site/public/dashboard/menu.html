@@ -37,9 +37,10 @@
     <main class=" bgPadrao  ">
         <div class="sideBar d-flex align-items-center h-100 ">
             <div class="container d-flex flex-column align-items-center justify-content-center">
-                <span id="nome" class="text-center"> Nome: <span id="nomeSideBar"></span></span>
+                <span id="empresa"><span id="empresaSideBar"></span></span>
+                <span id="nome"><span id="nomeSideBar"></span></span>
                 <a href="menu.html">menu</a>
-                <a href="maquinas.html">maquinas</a>
+                <a href="dashboard.html">maquinas</a>
                 <a href="relatorios.html">relatorios</a>
                 <a href="funcionarios.html">colaboradores</a>
                 <a onclick="limparSessao()" class="btnSair">Sair</a>
@@ -51,14 +52,14 @@
             </div>
             <div id="menu">
                 <div id="line1">
-                    <a href="dashboard.html" id="panelDashboard" onclick="funcionario()">
+                    <a href="DashboardGeral.html" id="panelDashboard" onclick="funcionario()">
                         <h2>Dashboard</h2>
                     </a>
 
                 </div>
                 <div id="line1">
-                    <a href="" id="totensFuncionario">
-                        <h2>Totens</h2>
+                    <a href="dashboard.html" id="totensFuncionario">
+                        <h2>Totem</h2>
                     </a>
                     <a href="funcionarios.html" id="panelFuncionario" onclick="funcionario()">
                         <h2>Funcionarios</h2>

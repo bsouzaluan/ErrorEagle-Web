@@ -25,13 +25,26 @@
 #nome {
     overflow-y: hidden;
     width: 300px;
-
+    text-align: center;
     color: white;
-    padding: 20px 3px 20px 0px;
+    padding: 5px 3px 5px 0px;
 }
 
 #nomeSideBar {
 
+    font-size: 20px;
+    color: white;
+}
+
+#empresa {
+    overflow-y: hidden;
+    width: 300px;
+    text-align: center;
+    color: white;
+    padding: 5px 3px 5px 0px;
+}
+
+#empresaSideBar {
     font-size: 20px;
     color: white;
 }

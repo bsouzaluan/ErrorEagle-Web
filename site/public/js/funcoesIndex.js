@@ -267,6 +267,7 @@ function entrar() {
                         sessionStorage.FK_EMPRESA = json.fkEmpresa;
                         sessionStorage.FK_SURPERVISOR = json.fkSurpervisor
                         sessionStorage.SENHA_USUARIO = json.senha;
+                        sessionStorage.EMPRESA = json.razaoSocial;
                         fecharModal("#modalLoginForm");
                         setTimeout(function () {
                             window.location = "./dashboard/menu.html";

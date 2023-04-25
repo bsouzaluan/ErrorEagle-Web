@@ -6,4 +6,4 @@
 // }, 2000);
 
 nomeSideBar.innerHTML += " " + sessionStorage.NOME_USUARIO;
-;
+empresaSideBar.innerHTML += " " + sessionStorage.EMPRESA;
