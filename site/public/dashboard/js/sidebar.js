@@ -5,5 +5,5 @@
 //     sidebar.style.width = '30';
 // }, 2000);
 
-nomeSideBar.innerHTML += "          " + sessionStorage.NOME_USUARIO;
+nomeSideBar.innerHTML += " " + sessionStorage.NOME_USUARIO;
 ;

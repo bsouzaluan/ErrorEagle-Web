@@ -71,11 +71,59 @@ h3 {
 
 .card-infos {
     height: 20%;
-    border-top: 3px solid #4e4e4e;
+    border-left: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    background-color: #222222;
 }
 
 #caixa-maior {
     box-shadow: rgba(10, 9, 9, 0.2) 0px 2px 8px 0px;
     background-color: #332F2E;
     border-radius: 7px;
+}
+
+.verde {
+    background-color: #0FFF19;
+    height: 15px;
+    width: 25%;
+}
+
+.amarelo {
+    background-color: #FFF50F;
+    height: 15px;
+    width: 25%;
+}
+
+.laranja {
+    background-color: #FF6B00;
+    height: 15px;
+    width: 25%;
+}
+
+.vermelho {
+    background-color: #FF0F0F;
+    height: 15px;
+    width: 25%;
+}
+
+#titleLegenda {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+
+.txtLegenda {
+    color: white;
+    padding: 5px 0px;
+    width: 25%;
+    /* margin: 0px 10px; */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.txtTituloPequeno {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }

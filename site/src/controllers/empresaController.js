@@ -111,6 +111,49 @@ function cadastrarFuncionario(req, res) {
 
 
 }
+
+function cadastrarFuncionarioSistema(req, res) {
+    var nomeFuncionario = req.body.nomeFuncionarioServer;
+    var emailFuncionario = req.body.emailFuncionarioServer;
+    var senhaFuncionario = req.body.senhaFuncionarioServer;
+    var telefoneFuncionario = req.body.telefoneFuncionarioServer;
+    var empresaFuncionario = req.body.empresaFuncionarioServer;
+    var surpervisor = req.body.supervisorFuncionarioServer;
+
+
+    if (nomeFuncionario == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (emailFuncionario == null) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senhaFuncionario == null) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (telefoneFuncionario == null) {
+        res.status(400).send("Seu telefoneFuncionario está undefined!");
+    } else if (empresaFuncionario == null) {
+        res.status(400).send("Sua empresa está undefined!");
+    } else if (surpervisor == null) {
+        res.status(400).send("Seu supervisor está undefined!");
+    }
+    else {
+        empresaModel.cadastrarFuncionarioSistema(nomeFuncionario, emailFuncionario, senhaFuncionario, telefoneFuncionario, empresaFuncionario, surpervisor).then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+    }
+
+
+}
+
 function cadastrarEmpresa(req, res) {
 
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
@@ -248,6 +291,7 @@ module.exports = {
     cadastrarEndereco,
     cadastrarEmpresa,
     cadastrarFuncionario,
+    cadastrarFuncionarioSistema,
     entrarFuncionario,
     // listarEmpresa,
     listarFuncionario,

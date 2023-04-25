@@ -1,11 +1,13 @@
 body {
     background-color: #101010 !important;
+    overflow-x: hidden;
+
 }
 
 main {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
 }
 
 header {
@@ -55,7 +57,7 @@ header {
 
 
 #headerH1 {
-    margin: 50px 0px;
+    margin: 20px 0px;
     background-color: #1E1E1E;
 }
 
@@ -78,8 +80,9 @@ header {
 
 #totensFuncionario {
     width: 45%;
-    height: 200px;
+    height: 150px;
     background-color: #CB1B29;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +91,8 @@ header {
 
 #panelDashboard {
     width: 95%;
-    height: 200px;
+    height: 150px;
+    color: black;
     background-color: #b3b3b3;
     display: flex;
     justify-content: center;
@@ -98,8 +102,9 @@ header {
 
 #panelFuncionario {
     width: 45%;
-    height: 200px;
+    height: 150px;
     background-color: #b3b3b3;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,9 +113,10 @@ header {
 
 #relatorioFuncionario {
     width: 60%;
-    height: 200px;
+    height: 150px;
     background-color: #b3b3b3;
     display: flex;
+    color: black;
     justify-content: center;
     align-items: center;
     margin: 20px;
@@ -118,8 +124,9 @@ header {
 
 #criarRelatorios {
     width: 30%;
-    height: 200px;
+    height: 150px;
     background-color: #CB1B29;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +136,10 @@ header {
 #line1 {
     display: flex;
     justify-content: center;
+}
+
+#line1 a {
+    text-decoration: none;
 }
 
 #line2 {
