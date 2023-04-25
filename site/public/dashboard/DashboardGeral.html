@@ -42,21 +42,24 @@
     </div>
     <main class="container d-flex justify-content-start ">
         <div class="w-50 h-100 mx-5">
-            <div class="h-50 w-100">
+            <div class="d-flex align-items-center justify-content-center flex-column h-50 w-100">
 
-                <div class="d-flex flex-column py-3" style="background-color: rgb(96, 96, 96); border-radius: 6px;">
+                <div class="d-flex flex-column py-3 w-100 h-50 justify-content-center"
+                    style="background-color: rgb(96, 96, 96); border-radius: 6px;">
                     <h3 id="titleLegenda" class="text-center">Legenda</h3>
-                    <div class="d-flex mx-2">
-                        <div class="verde"></div>
-                        <div class="amarelo"></div>
-                        <div class="laranja"></div>
-                        <div class="vermelho"></div>
-                    </div>
-                    <div class="d-flex mx-5 justify-content-center">
-                        <h4 class="txtLegenda text-center">Ideal</h4>
-                        <h4 class="txtLegenda text-center">Atenção</h4>
-                        <h4 class="txtLegenda text-center">Urgente</h4>
-                        <h4 class="txtLegenda text-center">Crítico</h4>
+                    <div class="d-flex flex-column w-100 ">
+                        <div class="d-flex mx-3 ">
+                            <div class="verde"></div>
+                            <div class="amarelo"></div>
+                            <div class="laranja"></div>
+                            <div class="vermelho"></div>
+                        </div>
+                        <div class="d-flex mx-3  justify-content-center">
+                            <h4 class="txtLegenda text-center">Ideal</h4>
+                            <h4 class="txtLegenda text-center">Atenção</h4>
+                            <h4 class="txtLegenda text-center">Urgente</h4>
+                            <h4 class="txtLegenda text-center">Crítico</h4>
+                        </div>
                     </div>
                 </div>
 
@@ -76,21 +79,21 @@
 
             </div>
 
-            <div class="h-50 w-100">
-                <div class="d-flex flex-column py-3 h-100 w-100"
+            <div class=" h-50 w-100 ">
+                <div class="d-flex flex-column justify-content-center py-3 h-100 w-100"
                     style="background-color: rgb(96, 96, 96); border-radius: 6px;">
                     <select class="filtro" style="border-radius: 6px;">
                         <option value="1">Crítico</option>
                         <option value="2">Urgente</option>
                         <option value="3">Atenção</option>
                     </select>
-                    <canvas id="grafico1" class='px-3 py-3' style="border-radius: 6px;"></canvas>
+                    <canvas id="grafico1" class='px-4 py-4 h-100' style="border-radius: 6px;"></canvas>
                 </div>
             </div>
         </div>
 
         <div class="w-50 h-100">
-            <div id="quadrante03" class=" w-100 px-3 py-2">
+            <div id="quadrante03" class="w-100 px-3 py-2 d-flex flex-column justify-content-center">
 
                 <h4 class="txtLegenda text-center w-100 ">Alertas mais recentes das máquinas</h4>
                 <div class="w-100 d-flex justify-content-between px-5">
@@ -106,38 +109,38 @@
                         <option value="3">DISCO</option>
                     </select>
                 </div>
-                <div id="listaAlerta" class="d-flex flex-column">
-                    <div class=" d-flex justify-content-around w-100 my-2 p-2 backButton">
+                <div id="listaAlerta" class="d-flex flex-column align-items-center">
+                    <div class=" d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaVermelha mx-4"></div>
                         <span>Máquina 20</span>
                         <span class="mx-4">Rede</span>
                     </div>
 
-                    <div class="d-flex justify-content-around w-100 my-2 p-2 backButton">
+                    <div class="d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaAmerelo mx-4"></div>
                         <span>Máquina 2</span>
                         <span class="mx-4">CPU</span>
                     </div>
 
-                    <div class="d-flex justify-content-around w-100 my-2 p-2 backButton">
+                    <div class="d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaLaranja mx-4"></div>
                         <span>Máquina 20</span>
                         <span class="mx-4">Rede</span>
                     </div>
 
-                    <div class="d-flex justify-content-around w-100 my-2 p-2 backButton">
+                    <div class="d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaLaranja mx-4"></div>
                         <span>Máquina 20</span>
                         <span class="mx-4">Rede</span>
                     </div>
 
-                    <div class="d-flex justify-content-around w-100 my-2 p-2 backButton">
+                    <div class="d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaLaranja mx-4"></div>
                         <span>Máquina 20</span>
                         <span class="mx-4">Rede</span>
                     </div>
 
-                    <div class="d-flex justify-content-around w-100 my-2 p-2 backButton">
+                    <div class="d-flex justify-content-around w-75 my-2 p-2 backButton">
                         <div class="bolinhaLaranja mx-4"></div>
                         <span>Máquina 20</span>
                         <span class="mx-4">Rede</span>
@@ -146,7 +149,7 @@
             </div>
 
             <div id='quadrante04' class="h-50 w-100">
-                <div class="d-flex flex-column py-3 h-100 w-100"
+                <div class="d-flex flex-column py-3 h-100 w-100 justify-content-center"
                     style="background-color: rgb(96, 96, 96); border-radius: 6px;">
                     <select class="filtro" style="border-radius: 6px;">
                         <option value="1">CPU</option>
@@ -154,7 +157,7 @@
                         <option value="3">RAM</option>
                         <option value="3">DISCO</option>
                     </select>
-                    <canvas id="grafico2" class='px-3 py-3' style="border-radius: 6px;"></canvas>
+                    <canvas id="grafico2" class='px-3 py-3 h-100' style="border-radius: 6px;"></canvas>
                 </div>
             </div>
         </div>
@@ -202,7 +205,7 @@
                     color: 'white',
                     font: {
                         weight: 'bold',
-                        size: 20
+                        size: 18
                     },
                     padding: {
                         top: '5px',
@@ -252,64 +255,64 @@
 </script>
 
 <script>
-   Chart.defaults.color = '#FFF';
+    Chart.defaults.color = '#FFF';
 
-const cty = document.getElementById('grafico2');
+    const cty = document.getElementById('grafico2');
 
-const data = {
-  labels: ['Atenção','Críticos','Urgentes'],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [23, 15, 62],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
+    const data = {
+        labels: ['Atenção', 'Críticos', 'Urgentes'],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [23, 15, 62],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
 
 
-const options = {
-  plugins: {
-    title: {
-      display: true,
-      text: 'Percentual do total de alertas fora do ideal de CPU hoje',
-      font: {
-        size: 20
-      },
-      padding: {
-        top: 10,
-        bottom: 20
-      }
-    },
-    legend: {
-      display: false
-    }
-  },
-  scales: {
-    x: {
-      stacked: true,
-      ticks: {
-        color: '#FFFFFF'
-      }
-    },
-    y: {
-      stacked: true,
-      ticks: {
-        color: '#FFFFFF',
-        beginAtZero: true
-      }
-    }
-  }
-};
+    const options = {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Percentual do total de alertas fora do ideal de CPU hoje',
+                font: {
+                    size: 20
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+            },
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            x: {
+                stacked: true,
+                ticks: {
+                    color: '#FFFFFF'
+                }
+            },
+            y: {
+                stacked: true,
+                ticks: {
+                    color: '#FFFFFF',
+                    beginAtZero: true
+                }
+            }
+        }
+    };
 
-const chart = new Chart(cty, {
-  type: 'bar',
-  data: data,
-  options: options
-});
+    const chart = new Chart(cty, {
+        type: 'bar',
+        data: data,
+        options: options
+    });
 
 
 </script>
